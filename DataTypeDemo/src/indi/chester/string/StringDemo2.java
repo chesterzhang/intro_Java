@@ -1,20 +1,19 @@
 package indi.chester.string;
 
-// String ¶ÔÏóµÄequals ºÍ == ·ûºÅÇø±ğ
 public class StringDemo2 {
 
-	public static void main(String[] args) {
-		String str1="java se";//str1ÊÇÕ»¿Õ¼äd¶îÒ»¸öÒıÓÃ£¬Ö¸Ïò³£Á¿³ØÖĞµÄ"java se"
-		String str2="java se";//str2ÊÇÕ»¿Õ¼äd¶îÒ»¸öÒıÓÃ£¬Ò²Ö¸Ïò³£Á¿³ØÖĞµÄ"java se"
-		String str3=new String("java se");//str3ÊÇÕ»¿Õ¼äd¶îÒ»¸öÒıÓÃ, Ö¸Ïò¶Ñ¿Õ¼äµÄnew³öÀ´µÄ¶ÔÏó
-		
-		// 	String Àà¶ÔÆä¸¸ÀàµÄ equals·½·¨½øĞĞÁËÖØĞ´£¬±È½ÏµÄÊÇ×Ö·û´®µÄÖµ
-		System.out.println("str1 ºÍ str2 ÄÚÈİ ÏàÍ¬Âğ? : "+(str1.equals(str2)));//true
-		System.out.println("str1 ºÍ str3 ÄÚÈİ ÏàÍ¬Âğ? : "+(str1.equals(str3)));//true
-		
-		System.out.println("str1 ºÍ str2 µØÖ· ÏàÍ¬Âğ? : "+(str1==str2));//true
-		System.out.println("str1 ºÍ str3 µØÖ· ÏàÍ¬Âğ? : "+(str1==str3));//false
+    public static void main(String[] args) {
+        String str1="java se";//str1æ˜¯æ ˆç©ºé—´çš„ä¸€ä¸ªå¼•ç”¨ï¼ŒæŒ‡å‘å¸¸é‡æ± ä¸­çš„"java se"
+        String str2="java se";//str2æ˜¯æ ˆç©ºé—´çš„ä¸€ä¸ªå¼•ç”¨ï¼Œä¹ŸæŒ‡å‘å¸¸é‡æ± ä¸­çš„"java se"
+        String str3=new String("java se");//str3æ˜¯æ ˆç©ºé—´dé¢ä¸€ä¸ªå¼•ç”¨, æŒ‡å‘å †ç©ºé—´çš„newå‡ºæ¥çš„å¯¹è±¡
 
-	}
+        // 	String ç±»å¯¹å…¶çˆ¶ç±»çš„ equalsæ–¹æ³•è¿›è¡Œäº†é‡å†™ï¼Œæ¯”è¾ƒçš„æ˜¯å­—ç¬¦ä¸²çš„å€¼
+        System.out.println("str1 å’Œ str2 å†…å®¹ ç›¸åŒå—? : "+(str1.equals(str2)));//true
+        System.out.println("str1 å’Œ str3 å†…å®¹ ç›¸åŒå—? : "+(str1.equals(str3)));//true
+
+        System.out.println("str1 å’Œ str2 åœ°å€ ç›¸åŒå—? : "+(str1==str2));//true
+        System.out.println("str1 å’Œ str3 åœ°å€ ç›¸åŒå—? : "+(str1==str3));//false
+
+    }
 
 }

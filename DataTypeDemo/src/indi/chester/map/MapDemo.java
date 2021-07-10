@@ -1,65 +1,65 @@
 package indi.chester.map;
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
+//Map ä¸­çš„æ•°æ®æ˜¯ä»¥é”®å€¼å¯¹ key-value çš„å½¢å¼å­˜å‚¨çš„,é€šè¿‡key æ‰¾åˆ°value, keyä¸èƒ½é‡å¤
+//key-valueä»¥Entryç±»å‹çš„å¯¹è±¡å®ä¾‹å­˜åœ¨
+
+import java.util.*;
 import java.util.Map.Entry;
-import java.util.Scanner;
-import java.util.Set;
 
-/**
- * Map
- * 
- * @author Chester_Zhang
- *
- */
+public interface MapDemo {
 
-//Map ÖĞµÄÊı¾İÊÇÒÔ¼üÖµ¶Ô key-value µÄĞÎÊ½´æ´¢µÄ£¬ Í¨¹ıkey ÕÒµ½value, key²»ÄÜÖØ¸´
-//key-valueÒÔEntryÀàĞÍµÄ¶ÔÏóÊµÀı´æÔÚ
+    public static void main(String[] args) {
+        // åˆ†åˆ«ç”¨HashMap, TreeMapå®ç°ä¸€ä¸ªè¯å…¸
+        Map<String, String> map1 = new HashMap<>();
+        Map<String, String> map2 = new TreeMap<>();
 
-public class MapDemo {
+        map1.put("Pig", "çŒª");
+        map1.put("Dog", "ç‹—");
+        map1.put("Cat", "çŒ«");
+        map1.put("elephant", "è±¡");
+        map1.remove("elephant");
+        if (map1.containsKey("Pig")){
+            System.out.println("Pig ä¸­æ–‡æ„æ€æ˜¯ "+ map1.get("Pig"));
+        }
 
-	public static void main(String[] args) {
-		// ÊµÏÖÒ»¸ö´Êµä
-		Map<String, String> animal = new HashMap<String, String>();
+        System.out.println("============================");
 
-		animal.put("Cat", "Ã¨");
-		animal.put("Dog", "¹·");
+        // æ‰“å°è¾“å‡ºMapçš„keyå’Œvalue,é€šè¿‡entrySetæ–¹æ³•
+        // entrySetè¿”å›å€¼æ˜¯Set<Entry<keyç±»å‹, valueç±»å‹>>
+        System.out.println("é€šè¿‡entrySetå¾—åˆ°key-value :");
+        Set<Entry<String, String>> entrySet = map1.entrySet();
+        for (Entry<String, String> entry : entrySet) {
+            System.out.print(entry.getKey() + " - ");
+            System.out.println(entry.getValue());
+        }
 
-		System.out.println("============================");
+        System.out.println("============================");
 
-		// ´òÓ¡Êä³öMapµÄvalues, Ê¹ÓÃµü´úÆ÷
-		System.out.println("´òÓ¡Êä³öMapµÄvalues, Ê¹ÓÃµü´úÆ÷ ");
-		Iterator<String> it = animal.values().iterator();
-		while (it.hasNext()) {
-			System.out.println(it.next());
-		}
+        // æ‰“å°è¾“å‡ºMapçš„keyå’Œvalue,é€šè¿‡keySetæ–¹æ³•
+        System.out.println("é€šè¿‡keySetå¾—åˆ°key-value :");
+        // 1.å–å¾—KeySet
+        Set<String> keySet = map1.keySet();
+        // 2.éå†keySet
+        for (String key : keySet) {
+            System.out.println( key + " - " + map1.get(key));
+        }
 
-		System.out.println("============================");
+        System.out.println("============================");
 
-		// ´òÓ¡Êä³öMapµÄkeyºÍvalue,Í¨¹ıentrySet·½·¨
-		// entrySet·µ»ØÖµÊÇSet<Entry<keyÀàĞÍ, valueÀàĞÍ>>
-		System.out.println("Í¨¹ıentrySetµÃµ½key-value :");
-		Set<Entry<String, String>> entrySet = animal.entrySet();
-		for (Entry<String, String> entry : entrySet) {
-			System.out.print(entry.getKey() + " - ");
-			System.out.println(entry.getValue());
-		}
 
-		System.out.println("============================");
+        // æ‰“å°è¾“å‡ºMapçš„values, ä½¿ç”¨è¿­ä»£å™¨
+        System.out.println("æ‰“å°è¾“å‡ºMapçš„values, ä½¿ç”¨è¿­ä»£å™¨ ");
+        Iterator<String> it = map1.values().iterator();
+        while (it.hasNext()) {
+            System.out.println(it.next());
+        }
 
-		// ´òÓ¡Êä³öMapµÄkeyºÍvalue,Í¨¹ıentrySet·½·¨
-		String strSearch = "Cat";
-		// 1.È¡µÃKeySet
-		Set<String> keySet = animal.keySet();
-		// 2.±éÀúkeySet
-		for (String key : keySet) {
-			if (strSearch.equals(key)) {
-				System.out.println("ÕÒµ½ÁË,¼üÖµ¶ÔÎª : " + key + " - " + animal.get(key));
-				break;
-			}
-		}
+        System.out.println("============================");
+        System.out.println("æ‰“å°è¾“å‡ºMapçš„values, ä½¿ç”¨è¿­ä»£å™¨ ");
+        for (String s: map1.values()) {
+            System.out.println(s);
+        }
 
-	}
+    }
 
 }

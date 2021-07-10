@@ -3,46 +3,73 @@ package indi.chester.set;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
+import java.util.TreeSet;
 
-/**
- * Set 数据类型, 与数学中的集合类似,不允许有重复元素, 元素之间无序
- * @author Chester_Zhang
- */
-
-//Set本质上是一个类
-//add, iterator方法;
+//Set 鏁版嵁绫诲瀷,  涓嶅厑璁告湁閲嶅鍏冪礌
+//Java 涓湁涓ょ甯歌鐨凷et
+//涓�绉嶆槸HashSet, 鏃犲簭
+//鍙︿竴绉嶆槸TreeSet, 鏈夊簭
 
 public class SetDemo1 {
 
-	public static void main(String[] args) {
-		// 将英文单词添加到HashSet中
-				Set set = new HashSet();
+    public static void main(String[] args) {
+        Set<String> set1 = new HashSet<>();
+        Set<String> set2 = new TreeSet<>();
 
-				set.add("blue");
-				set.add("red");
-				set.add("black");
-				set.add("yellow");
-				set.add("white");
+        set1.add("blue");
+        set1.add("red");
+        set1.add("black");
+        set1.add("yellow");
+        set1.add("white");
+        set1.remove("white");
 
-				
-				// 用迭代器遍历输出元素
-				System.out.println("集合中元素为:");
-				Iterator it = set.iterator();
-				while (it.hasNext()) {
-					System.out.println(it.next());
-				}
+        if (set1.contains("blue")){
+            System.out.println("HashSet 鍚湁blue");
+        }
 
-				// 在集合中插入新元素
-				set.add("green");
-				set.add("white");//重复元素
-				// 用迭代器遍历输出元素
-				it = set.iterator();
-				System.out.println("集合中元素为:");
-				while (it.hasNext()) {
-					System.out.println(it.next());
-				}
+        set2.add("blue");
+        set2.add("red");
+        set2.add("black");
+        set2.add("yellow");
 
 
-	}
+
+
+        // 鐢ㄨ凯浠ｅ櫒閬嶅巻鍏冪礌
+        System.out.println("HashSet涓厓绱犱负:");
+        Iterator it1 = set1.iterator();
+        while (it1.hasNext()) {
+            System.out.println(it1.next());
+        }
+
+        System.out.println();
+
+        //涔熷彲浠ョ敤澧炲己鍨媐or寰幆閬嶅巻
+        System.out.println("HashSet涓厓绱犱负:");
+        for (String s: set1) {
+            System.out.println(s);
+        }
+
+        System.out.println();
+
+        // 鐢ㄨ凯浠ｅ櫒閬嶅巻鍏冪礌
+        System.out.println("TreeSet涓厓绱犱负:");
+        Iterator it2 = set2.iterator();
+        while (it2.hasNext()) {
+            System.out.println(it2.next());
+        }
+
+        System.out.println();
+
+        //涔熷彲浠ョ敤澧炲己鍨媐or寰幆閬嶅巻
+        System.out.println("TreeSet涓厓绱犱负:");
+        for (String s: set2) {
+            System.out.println(s);
+        }
+
+
+    }
+
 
 }
+

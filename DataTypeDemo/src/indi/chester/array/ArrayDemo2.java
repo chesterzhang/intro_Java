@@ -1,45 +1,44 @@
 package indi.chester.array;
 
-//Ò»Î¬Êı×é, Êı×éÒ²ÊÇÒıÓÃĞÍ±äÁ¿
+//äºŒç»´æ•°ç»„
 public class ArrayDemo2 {
+    public static void main(String[] args) {
+        //äºŒç»´æ•°ç»„å£°æ˜ : å˜é‡å ç±»å‹ [][] å˜é‡å=new ç±»å‹å[è¡Œæ•°][åˆ—æ•°]; è¡Œæ•°å¿…é¡»æœ‰,åˆ—æ•°å¯ä»¥ä¸æä¾›
+        //äºŒç»´æ•°ç»„åˆå§‹åŒ–: å˜é‡å={{å…ƒç´ [0][0], å…ƒç´ [0][1]...}, {... } }
 
-	public static void main(String[] args) {
-		//¶şÎ¬Êı×éÉùÃ÷ : ±äÁ¿Ãû ÀàĞÍ [][] ±äÁ¿Ãû=new ÀàĞÍÃû[ĞĞÊı][ÁĞÊı]; ĞĞÊı±ØĞëÓĞ,ÁĞÊı¿ÉÒÔ²»Ìá¹©
-		//¶şÎ¬Êı×é³õÊ¼»¯: ±äÁ¿Ãû={{ÔªËØ[0][0], ÔªËØ[0][1]...}, {... } }
-		
-		int[][] intArray;
-		float[][] floatArray;
 
-		// ´´½¨Ò»¸öÈıĞĞÈıÁĞµÄintÊı×é
-		intArray = new int[3][3];
-		System.out.println("intArrayÊı×éµÚÈıĞĞµÚ¶şÁĞÔªËØ:" + intArray[2][1]);
 
-		// ÎªµÚ¶şĞĞµÚÈı¸ö¸´ÖÆÎª9
-		intArray[1][2] = 9;
-		System.out.println("intArrayÊı×éµÚ¶şĞĞµÚÈıÁĞÔªËØÎª:" + intArray[1][2]);
 
-		// ÉùÃ÷Êı×éµÄÍ¬Ê±½øĞĞ´´½¨
-		char[][] ch = new char[3][5];
+        // åˆ›å»ºä¸€ä¸ªä¸‰è¡Œä¸‰åˆ—çš„intæ•°ç»„
+        int[][] intArray = new int[3][3];
+        System.out.println("intArrayæ•°ç»„ç¬¬ä¸‰è¡Œç¬¬äºŒåˆ—å…ƒç´ :" + intArray[2][1]);
 
-		// ´´½¨floatÀàĞÍµÄÊı×éÊ±ºò,Ö»Ö¸¶¨ĞĞÊı
-		floatArray = new float[3][]; // ±ØĞëÒªÖ¸¶¨ĞĞÊı,ÁĞÊı¿ÉÒÔÊ¡ÂÔ
-		// System.out.println(floatArray[0][0]); //»á±¨´í
-		// Ã¿Ò»ĞĞÏàµ±ÓÚÒ»¸öÒ»Î¬Êı×é
-		floatArray[0] = new float[3];
-		floatArray[1] = new float[4];
-		floatArray[2] = new float[5];
-		System.out.println(floatArray[0][0]);
+        // ä¸ºç¬¬äºŒè¡Œç¬¬ä¸‰ä¸ªå¤åˆ¶ä¸º9
+        intArray[1][2] = 9;
+        System.out.println("intArrayæ•°ç»„ç¬¬äºŒè¡Œç¬¬ä¸‰åˆ—å…ƒç´ ä¸º:" + intArray[1][2]);
 
-		// ¶şÎ¬Êı×é³õÊ¼»¯£¬Ã¿Ò»ĞĞÁĞÊıÏàµÈ
-		int[][] num = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
-		System.out.println("numÊı×éµÚ1ĞĞµÚ2ÁĞµÄÔªËØÎª:" + num[0][1]);
-		System.out.println("numÊı×éµÄĞĞÊıÎª:" + num.length);
-		System.out.println("numÊı×éµÄÁĞÊıÎª:" + num[0].length);
-		
-		//¶şÎ¬Êı×é³õÊ¼»¯£¬Ã¿Ò»ĞĞÁĞÊı²»ÏàµÈ
-		int[][] num1 = { { 78, 98 }, { 65, 75, 63, 63 }, { 98 } };
-		System.out.println("num1Êı×éµÚ1ĞĞµÄÁĞÊıÎª:" + num1[0].length);
+        // å£°æ˜æ•°ç»„çš„åŒæ—¶è¿›è¡Œåˆ›å»º
+        //char[][] ch = new char[3][5];
 
-	}
+        // åˆ›å»ºfloatç±»å‹çš„æ•°ç»„æ—¶å€™,åªæŒ‡å®šè¡Œæ•°
+        float[][]  floatArray = new float[3][]; // å¿…é¡»è¦æŒ‡å®šè¡Œæ•°,åˆ—æ•°å¯ä»¥çœç•¥
+        // System.out.println(floatArray[0][0]); //ä¼šæŠ¥é”™
+        // æ¯ä¸€è¡Œç›¸å½“äºä¸€ä¸ªä¸€ç»´æ•°ç»„
+        floatArray[0] = new float[3];
+        floatArray[1] = new float[4];
+        floatArray[2] = new float[5];
+        System.out.println(floatArray[0][0]);
+
+        // äºŒç»´æ•°ç»„åˆå§‹åŒ–ï¼Œæ¯ä¸€è¡Œåˆ—æ•°ç›¸ç­‰
+        int[][] num1 = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+        System.out.println("numæ•°ç»„ç¬¬1è¡Œç¬¬2åˆ—çš„å…ƒç´ ä¸º:" + num1[0][1]);
+        System.out.println("numæ•°ç»„çš„è¡Œæ•°ä¸º:" + num1.length);
+        System.out.println("numæ•°ç»„çš„åˆ—æ•°ä¸º:" + num1[0].length);
+
+        //äºŒç»´æ•°ç»„åˆå§‹åŒ–ï¼Œæ¯ä¸€è¡Œåˆ—æ•°ä¸ç›¸ç­‰
+        int[][] num2 = { { 78, 98 }, { 65, 75, 63, 63 }, { 98 } };
+        System.out.println("num1æ•°ç»„ç¬¬1è¡Œçš„åˆ—æ•°ä¸º:" + num2[0].length);
+
+    }
 
 }

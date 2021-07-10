@@ -1,34 +1,38 @@
 package indi.chester.array;
 
-//Ò»Î¬Êı×é, Êı×éÒ²ÊÇÒıÓÃĞÍ±äÁ¿
 public class ArrayDemo1 {
+    public static void main(String[] args) {
+        //å£°æ˜å½¢å¼: ç±»å‹[] å˜é‡å = new ç±»å‹[é•¿åº¦]
+        //åˆå§‹åŒ–å½¢å¼: å˜é‡å={å…ƒç´ 1, å…ƒç´ 2, ......, å…ƒç´ n}
 
-	public static void main(String[] args) {
-		//ÉùÃ÷ĞÎÊ½: ÀàĞÍ[] ±äÁ¿Ãû = new ÀàĞÍ[³¤¶È]
-		//³õÊ¼»¯ĞÎÊ½: ±äÁ¿Ãû={ÔªËØ1, ÔªËØ2, ......, ÔªËØn}
-		
-		// ÉùÃ÷²¢´´½¨Ò»¸öÕûĞÎÊı×é
-		int[] intArray = new int[5];// Ä¬ÈÏ³õÊ¼ÖµÎª0
+        // å£°æ˜å¹¶åˆ›å»ºä¸€ä¸ªæ•´å½¢æ•°ç»„
+        int[] intArray = new int[5];// é»˜è®¤åˆå§‹å€¼ä¸º0
 
-		// ÉùÃ÷²¢´´½¨Ò»¸ö×Ö·û´®Êı×é
-		String[] strArray = new String[10];// Ä¬ÈÏ³õÊ¼ÖµÎªnull
-		// ÉùÃ÷²¢´´½¨Ò»¸öfloat´®Êı×é
-		float[] floatArray = new float[5];// Ä¬ÈÏ³õÊ¼ÖµÎª0
+        // å£°æ˜å¹¶åˆ›å»ºä¸€ä¸ªå­—ç¬¦ä¸²æ•°ç»„
+        String[] strArray = new String[10];// é»˜è®¤åˆå§‹å€¼ä¸ºnull
+        // å£°æ˜å¹¶åˆ›å»ºä¸€ä¸ªfloatä¸²æ•°ç»„
+        float[] floatArray = new float[5];// é»˜è®¤åˆå§‹å€¼ä¸º0
 
-		// ³õÊ¼»¯×Ö·ûÊı×é
-		char[] ch = { 'a', 'b', 'c', 'd' };
-		
-		//ÔöÇ¿ĞÍforÑ­»·Êä³öÊı×éch
-		for (char c:ch) {
-			System.out.print(c+" ");
-		}
-		System.out.println();
+        // åˆå§‹åŒ–å­—ç¬¦æ•°ç»„
+        char[] ch = { 'a', 'b', 'c', 'd' };
 
-		System.out.println("chÊı×é³¤¶ÈÎª:" + ch.length);
-		System.out.println("intArrayÊı×éµÄµÚ2¸öÔªËØÎª:" + intArray[1]);
-		System.out.println("strArrayÊı×éµÄµÚ5¸öÔªËØÎª:" + strArray[4]);
-		System.out.println("floatArrayÊı×éµÄ×îºó1¸öÔªËØÎª:" + floatArray[floatArray.length - 1]);
+        //ä½¿ç”¨ç´¢å¼•éå†æ•°ç»„
+        for (int i = 0; i < ch.length; i++) {
+            System.out.print(ch[i]+" ");
+        }
+        System.out.println();
 
-	}
+        //å¢å¼ºå‹forå¾ªç¯è¾“å‡ºæ•°ç»„ch
+        for (char c:ch) {
+            System.out.print(c+" ");
+        }
+        System.out.println();
+
+        System.out.println("chæ•°ç»„é•¿åº¦ä¸º:" + ch.length);
+        System.out.println("intArrayæ•°ç»„çš„ç¬¬2ä¸ªå…ƒç´ ä¸º:" + intArray[1]);
+        System.out.println("strArrayæ•°ç»„çš„ç¬¬5ä¸ªå…ƒç´ ä¸º:" + strArray[4]);
+        System.out.println("floatArrayæ•°ç»„çš„æœ€å1ä¸ªå…ƒç´ ä¸º:" + floatArray[floatArray.length - 1]);
+
+    }
 
 }

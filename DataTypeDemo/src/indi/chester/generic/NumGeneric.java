@@ -1,37 +1,23 @@
 package indi.chester.generic;
 
-public class NumGeneric <T,X> {
-	
-	private T num1;
-	private X num2;
-	 
-	public T getNum1() {
-		return num1;
-	}
+public class NumGeneric<E> {
 
-	public void setNum1(T num1) {
-		this.num1 = num1;
-	}
+    private E num;
 
-	public X getNum2() {
-		return num2;
-	}
+    public NumGeneric(E num) {
+        this.num = num;
+    }
 
-	public void setNum2(X num2) {
-		this.num2 = num2;
-	}
+    public E getNum() {
+        return num;
+    }
 
-	public static void main(String[] args) {
-		
-		 NumGeneric<Integer , Float> numObj= new  NumGeneric<>();
-		 numObj.setNum1(25);
-		 numObj.setNum2(5.0f);//必须加f否则报错
-		 
-		 System.out.println("Num1 : "+ numObj.getNum1());
-		 System.out.println("Num2 : "+ numObj.getNum2());
+    public static void main(String[] args) {
 
-	}
+        NumGeneric<Double> numObj= new NumGeneric<>(25.0);
 
+        System.out.println("Num : "+ numObj.getNum());
+
+    }
 }
 
- 

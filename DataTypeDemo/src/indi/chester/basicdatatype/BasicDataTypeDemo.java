@@ -1,39 +1,39 @@
 package indi.chester.basicdatatype;
 
-//ÓÃÓÚÑİÊ¾Java »ù±¾Êı¾İÀàĞÍ:
-//1. ÕûĞÍ byte,short, int, long
-//2. ¸¡µãĞÎ float double
-//3. ×Ö·ûĞÎ char
-//4. ²¼¶ûĞÍ boolean
+//ç”¨äºæ¼”ç¤ºJava åŸºæœ¬æ•°æ®ç±»å‹:
+//1. æ•´å‹ byte,short, int, long
+//2. æµ®ç‚¹å½¢ float double
+//3. å­—ç¬¦å½¢ char
+//4. å¸ƒå°”å‹ boolean
 
 public class BasicDataTypeDemo {
 
-	public static void main(String[] args) {
-		byte a= 20;
-		short b=20;
-		int c=20;
-		long d1=20;
-		long d2=024;//°Ë½øÖÆ: Êı×Ö0´òÍ·
-		long d3=0X14L;//Ê®Áù½øÖÆ: 0X´òÍ·
-		float e=20f;
-		double f=20d;
-		
-		char g=20;//¶ÔÓ¦µÄASCIIÂë
-		
-		boolean h=false;
-		
-		System.out.println("byte ÀàĞÍ 20 : "+a);
-		System.out.println("short  ÀàĞÍ 20 : "+b);
-		System.out.println("int   ÀàĞÍ 20 : "+c);
-		System.out.println("long Ê®½øÖÆ ÀàĞÍ 20 : "+d1);
-		System.out.println("long °Ë½øÖÆ ÀàĞÍ 20 : "+d2);
-		System.out.println("long Ê®Áù½øÖÆ ÀàĞÍ  20 : "+d3);
-		System.out.println("float ÀàĞÍ  20 : "+e);
-		System.out.println("double ÀàĞÍ  20 : "+f);
-		System.out.println("char   ÀàĞÍ 20 : "+g);
-		System.out.println("boolean   ÀàĞÍ false: "+h);
+    public static void main(String[] args) {
 
+        byte a= 20;
+        short b=20;
+        int c=20;
+        long d1=20;
+        long d2=024;//å…«è¿›åˆ¶: æ•°å­—0æ‰“å¤´
+        long d3=0X14L;//åå…­è¿›åˆ¶: 0Xæ‰“å¤´
+        float e=20f;
+        double f=20d;
 
-	}
+        char g=20;//å¯¹åº”çš„ASCIIç 
+
+        boolean h=false;
+
+        System.out.println("byte ç±»å‹ 20 : "+a);
+        System.out.println("short  ç±»å‹ 20 : "+b);
+        System.out.println("int   ç±»å‹ 20 : "+c);
+        System.out.println("long åè¿›åˆ¶ ç±»å‹ 20 : "+d1);
+        System.out.println("long å…«è¿›åˆ¶ ç±»å‹ 20 : "+d2);
+        System.out.println("long åå…­è¿›åˆ¶ ç±»å‹  20 : "+d3);
+        System.out.println("float ç±»å‹  20 : "+e);
+        System.out.println("double ç±»å‹  20 : "+f);
+        System.out.println("char   ç±»å‹ 20 : "+g);
+        System.out.println("boolean   ç±»å‹ false: "+h);
+
+    }
 
 }

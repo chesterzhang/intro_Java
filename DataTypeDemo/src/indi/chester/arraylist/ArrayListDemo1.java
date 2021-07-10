@@ -1,71 +1,69 @@
 package indi.chester.arraylist;
 
-import java.util.List;
+//ArrayList æ•°æ®ç±»å‹, æ˜¯ä¸€ä¸ªç±»
+//åº•å±‚ç”±æ•°ç»„å®ç°
+//å¯ä»¥åŠ¨æ€å¢é•¿
+//åœ¨åˆ—è¡¨å°¾éƒ¨æ’å…¥æˆ–åˆ é™¤æ•°æ®éå¸¸æœ‰æ•ˆ
+//æ›´é€‚åˆæŸ¥æ‰¾å’Œæ›´æ–°å…ƒç´ 
+//å¸¸ç”¨æ–¹æ³• add, get, remove size
+
 import java.util.ArrayList;
 import java.util.Collections;
-
-/**
- * ArrayList Êı¾İÀàĞÍ
- * @author Chester_Zhang
- *
- */
-
-
-//ArrayList Êı¾İÀàĞÍ, ÊÇÒ»¸öÀà
-//µ×²ãÓÉÊı×éÊµÏÖ
-//¿ÉÒÔ¶¯Ì¬Ôö³¤
-//ÔÚÁĞ±íÎ²²¿²åÈë»òÉ¾³ıÊı¾İ·Ç³£ÓĞĞ§
-//¸üÊÊºÏ²éÕÒºÍ¸üĞÂÔªËØ
-//³£ÓÃ·½·¨ add, get, remove
-
+import java.util.List;
 
 public class ArrayListDemo1 {
 
-	public static void main(String[] args) {
-		// ÓÃArrayList´æ´¢±à³ÌÓïÑÔµÄÃû³Æ,²¢Êä³ö
-				List<String> list=new ArrayList<String>();	
-				list.add("Java");
-				list.add("C");
-				list.add("C++");
-				list.add("Go");
-				list.add("Swift");
+    public static void main(String[] args) {
+        // ç”¨ArrayListå­˜å‚¨ç¼–ç¨‹è¯­è¨€çš„åç§°,å¹¶è¾“å‡º
+        List<String> list=new ArrayList<>();
+        list.add("Java");
+        list.add("C");
+        list.add("C++");
+        list.add("Go");
+        list.add("Swift");
 
-				//Êä³öÁĞ±íÖĞÔªËØ¸öÊı
-				System.out.println("ÁĞ±íÖĞÔªËØ¸öÊıÎª : "+list.size());
-				
-				System.out.println("==============================");
-				
-				//±éÀúsetÔªËØ
-				for(int i=0;i<list.size();i++) {
-					System.out.print(list.get(i)+ " ");
-				}
-				
-				System.out.println();
-				System.out.println("==============================");
-				
-				//¶Ôlist½øĞĞÅÅĞò
-				Collections.sort(list);
-				System.out.println("listÅÅĞòºó:");
-				for(int i=0;i<list.size();i++) {
-					System.out.print(list.get(i)+ " ");
-				}
-				
-				System.out.println();
-				System.out.println("==============================");
-				
-				
-				//ÒÆ³ıÁĞ±íÖĞµÄC++
-				System.out.println();
-				//list.remove(2);
-				list.remove("C++");
-				System.out.println("==============================");
-				System.out.println("ÒÆ³ıÁĞ±íÖĞC++ÒÔºóµÄÔªËØÎª:");
-				for(int i=0;i<list.size();i++) {
-					System.out.println(list.get(i)+ " ");
-				}
-				
-				
+        //è¾“å‡ºåˆ—è¡¨ä¸­å…ƒç´ ä¸ªæ•°
+        System.out.println("åˆ—è¡¨ä¸­å…ƒç´ ä¸ªæ•°ä¸º : "+list.size());
 
-	}
+        System.out.println("==============================");
 
+        //ä½¿ç”¨ç´¢å¼•éå†setå…ƒç´ 
+        for(int i=0;i<list.size();i++) {
+            System.out.print(list.get(i)+ " ");
+        }
+
+        System.out.println();
+
+        //ä½¿ç”¨å¢å¼ºå‹forå¾ªç¯éå†setå…ƒç´ 
+        for (String s: list) {
+            System.out.print(s+" ");
+        }
+
+        System.out.println();
+        System.out.println("==============================");
+
+        //å¯¹listè¿›è¡Œæ’åº
+        Collections.sort(list);
+        System.out.println("listæ’åºå:");
+        for(int i=0;i<list.size();i++) {
+            System.out.print(list.get(i)+ " ");
+        }
+
+        System.out.println();
+        System.out.println("==============================");
+
+
+        //ç§»é™¤åˆ—è¡¨ä¸­çš„C++
+        System.out.println();
+        //list.remove(2);
+        list.remove("C++");
+        System.out.println("==============================");
+        System.out.println("ç§»é™¤åˆ—è¡¨ä¸­C++ä»¥åçš„å…ƒç´ ä¸º:");
+        for(int i=0;i<list.size();i++) {
+            System.out.println(list.get(i)+ " ");
+        }
+
+
+
+    }
 }

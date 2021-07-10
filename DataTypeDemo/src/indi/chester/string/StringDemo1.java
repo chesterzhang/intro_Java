@@ -2,57 +2,54 @@ package indi.chester.string;
 
 import java.io.UnsupportedEncodingException;
 
-//String ÀàĞÍÊı¾İ, String²»Í¬ÓÚÒ»°ãµÄ»ù±¾Êı¾İÀàĞÍ£¬Æä±¾ÖÊÉÏÊÇÒ»¸öÀà, ÊôÓÚÒıÓÃÊı¾İÀàĞÍ
-// length, substring,charAt, indexOf, lastIndexOf·½·¨
-//String ºÍbyte Êı×éµÄÏà»¥×ª»»
 public class StringDemo1 {
 
-	public static void main(String[] args) {
-		// ¶¨ÒåÒ»¸ö×Ö·û´®"Java ±à³Ì »ù´¡"
-		String str = new String("Java ±à³Ì »ù´¡");
-		//String str = "Java ±à³Ì »ù´¡"; //ºÍÉÏÃæÒ»¾äµÈ¼Û
+    public static void main(String[] args) throws UnsupportedEncodingException {
 
-		// length ´òÓ¡Êä³ö×Ö·û´®µÄ³¤¶È
-		System.out.println("×Ö·û´®µÄ³¤¶ÈÊÇ : " + str.length());
+        // å®šä¹‰ä¸€ä¸ªå­—ç¬¦ä¸²"Java ç¼–ç¨‹ åŸºç¡€"
+        String str = new String("Java ç¼–ç¨‹ åŸºç¡€");
+        //String str = "Java ç¼–ç¨‹ åŸºç¡€"; //å’Œä¸Šé¢ä¸€å¥ç­‰ä»·
 
-		// substring È¥³ı×Ö´®"±à³Ì »ù´¡"²¢Êä³ö
-		System.out.println(str.substring(5));
-		System.out.println(str.substring(5, 10));
+        // length æ‰“å°è¾“å‡ºå­—ç¬¦ä¸²çš„é•¿åº¦
+        System.out.println("å­—ç¬¦ä¸²çš„é•¿åº¦æ˜¯ : " + str.length());
 
-		// substring È¡³ö×Ö·û "³Ì" ²¢Êä³ö
-		System.out.println(str.charAt(6));
+        // substring å»é™¤å­—ä¸²"ç¼–ç¨‹ åŸºç¡€"å¹¶è¾“å‡º
+        System.out.println(str.substring(5));
+        System.out.println(str.substring(5, 10));
 
-		// index ²éÕÒ'a'×Ö·û´®ÖĞµÚÒ»´Î³öÏÖµÄÎ»ÖÃ
-		System.out.println("×Ö·û'a'ÔÚ×Ö·û´®ÖĞµÚÒ»´Î³öÏÖµÄÎ»ÖÃ : " + str.indexOf('a'));
+        // substring å–å‡ºå­—ç¬¦ "ç¨‹" å¹¶è¾“å‡º
+        System.out.println(str.charAt(6));
 
-		// lastIndexOf ²éÕÒ'a'×Ö·û´®ÖĞ×îºóÒ»´Î³öÏÖµÄÎ»ÖÃ
-		System.out.println("×Ö·û'a'ÔÚ×Ö·û´®ÖĞµÚÒ»´Î³öÏÖµÄÎ»ÖÃ : " + str.lastIndexOf('a'));
+        // index æŸ¥æ‰¾'a'å­—ç¬¦ä¸²ä¸­ç¬¬ä¸€æ¬¡å‡ºç°çš„ä½ç½®
+        System.out.println("å­—ç¬¦'a'åœ¨å­—ç¬¦ä¸²ä¸­ç¬¬ä¸€æ¬¡å‡ºç°çš„ä½ç½® : " + str.indexOf('a'));
 
-		// ´ÓÎ»ÖÃ3¿ªÊ¼£¬²éÕÒ'a'×Ö·û´®ÖĞµÚÒ»´Î³öÏÖµÄÎ»ÖÃ
-		System.out.println("´ÓÎ»ÖÃ8¿ªÊ¼£¬×Ö·û'a'ÔÚ×Ö·û´®ÖĞµÚÒ»´Î³öÏÖµÄÎ»ÖÃ : " + str.indexOf('a', 3));
-		
-		System.out.println("=============================");
-		
-		// ½«×Ö·û´®×ª»»ÎªbyteÊı×é,²¢´òÓ¡Êä³ö
-		byte[] arrs=null;
-		try {
-			arrs = str.getBytes("GBK");// Ò²¿ÉÒÔ²»Ö¸¶¨±àÂë¸ñÊ½,winÄ¬ÈÏGBK£¬macÄ¬ÈÏUTF-8
-			for (int i = 0; i < arrs.length; i++) {
-				System.out.print(arrs[i]+" ");
-			}
-		} catch (UnsupportedEncodingException e) {
-			e.printStackTrace();
-		} 
-		System.out.println();
-		System.out.println("=============================");
-		
-		//½«byteÊı×é×ª»»Îª×Ö·û´®
-		String str1=new String(arrs);//Ò²¿ÉÒÔ²»Ö¸¶¨±àÂë¸ñÊ½,winÄ¬ÈÏGBK
-		System.out.println(str1);
- 
-		
+        // lastIndexOf æŸ¥æ‰¾'a'å­—ç¬¦ä¸²ä¸­æœ€åä¸€æ¬¡å‡ºç°çš„ä½ç½®
+        System.out.println("å­—ç¬¦'a'åœ¨å­—ç¬¦ä¸²ä¸­ç¬¬ä¸€æ¬¡å‡ºç°çš„ä½ç½® : " + str.lastIndexOf('a'));
 
+        // ä»ä½ç½®3å¼€å§‹ï¼ŒæŸ¥æ‰¾'a'å­—ç¬¦ä¸²ä¸­ç¬¬ä¸€æ¬¡å‡ºç°çš„ä½ç½®
+        System.out.println("ä»ä½ç½®8å¼€å§‹ï¼Œå­—ç¬¦'a'åœ¨å­—ç¬¦ä¸²ä¸­ç¬¬ä¸€æ¬¡å‡ºç°çš„ä½ç½® : " + str.indexOf('a', 3));
 
-	}
+        System.out.println("=============================");
+
+        // å°†å­—ç¬¦ä¸²è½¬æ¢ä¸ºbyteæ•°ç»„,å¹¶æ‰“å°è¾“å‡º
+        byte[] arrs=null;
+        try {
+            arrs = str.getBytes("GBK");// ä¹Ÿå¯ä»¥ä¸æŒ‡å®šç¼–ç æ ¼å¼,winé»˜è®¤GBKï¼Œmacé»˜è®¤UTF-8
+            for (int i = 0; i < arrs.length; i++) {
+                System.out.print(arrs[i]+" ");
+            }
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        System.out.println();
+        System.out.println("=============================");
+
+        //å°†byteæ•°ç»„è½¬æ¢ä¸ºå­—ç¬¦ä¸²
+        String str1=new String(arrs,"GBK");//ä¹Ÿå¯ä»¥ä¸æŒ‡å®šç¼–ç æ ¼å¼,winé»˜è®¤GBK
+        System.out.println(str1);
+
+    }
 
 }
+
+

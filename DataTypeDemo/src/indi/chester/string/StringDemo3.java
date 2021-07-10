@@ -1,24 +1,25 @@
 package indi.chester.string;
 
-//String ¶ÔÏóµÄ²»¿É±äĞÔ
+//String å¯¹è±¡çš„ä¸å¯å˜æ€§
 public class StringDemo3 {
 
-	public static void main(String[] args) {
-		String s1="java";//s1Ö¸Ïò³£Á¿³ØÀïÃæjava"
-		s1="hello,"+s1;//s1Ö¸Ïò³£Á¿³ØÀïÃæµÄ"hello,java"
-		System.out.println("s1="+s1);
-		
-		//String ¶ÔÏóÒ»µ©±» new ³öÀ´£¬¼´²»¿É±ä
-		//Èô¸ø×Ö·û´®ÖØĞÂ¸³Öµ£¬ÔòÏàµ±ÓënewÁËÒ»¸öĞÂ¶ÔÏó
+    public static void main(String[] args) {
+        String s1="java";//s1æŒ‡å‘å¸¸é‡æ± é‡Œé¢java"
+        s1="hello,"+s1;//s1æŒ‡å‘å¸¸é‡æ± é‡Œé¢çš„"hello,java"
+        System.out.println("s1="+s1);
 
-		//ÓÃ¶ÔÏó==²âÊÔ
-		System.out.println("s1 µØÖ·"+s1==(s1="python"));
-		
-		//ÓÃ¶ÔÏóhashcode²âÊÔ,¹ØÓÚhashcode·½·¨Ïê¼ûjavaÎÄµµ
-		System.out.println(s1.hashCode());
-		s1="C++";
-		System.out.println(s1.hashCode());
-	 
-	}
+        //String å¯¹è±¡ä¸€æ—¦è¢« new å‡ºæ¥ï¼Œå³ä¸å¯å˜
+        //è‹¥ç»™å­—ç¬¦ä¸²é‡æ–°èµ‹å€¼ï¼Œåˆ™ç›¸å½“ä¸newäº†ä¸€ä¸ªæ–°å¯¹è±¡
+
+        //ç”¨å¯¹è±¡==æµ‹è¯•
+        System.out.println("s1 åœ°å€"+s1==(s1="python"));//è¾“å‡ºfalse
+
+        //ç”¨å¯¹è±¡hashcodeæµ‹è¯•,ä¸¤æ¬¡è¾“å‡ºä¸åŒ
+        System.out.println(s1.hashCode());
+        s1="C++";
+        System.out.println(s1.hashCode());
+
+    }
 
 }
+
