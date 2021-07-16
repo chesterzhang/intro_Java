@@ -6,12 +6,12 @@
 ###
 
 
-<table style="undefined;table-layout: fixed; width: 688px">
+<table style="undefined;table-layout: fixed; width: 660px">
 <colgroup>
-<col style="width: 190px">
-<col style="width: 175px">
-<col style="width: 169px">
-<col style="width: 154px">
+<col style="width: 178px">
+<col style="width: 168px">
+<col style="width: 161px">
+<col style="width: 153px">
 </colgroup>
 <tbody>
   <tr>
