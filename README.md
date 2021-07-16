@@ -1,16 +1,17 @@
 ## 欢迎来到 Chester Zhang 的 Java 快速入门代码仓库
-####也欢迎访问 [我的配套 GitBook 图文教程](https://chesterzhang666.gitbook.io/intro-java/)
+####
+也欢迎访问 [我的配套 GitBook 图文教程](https://chesterzhang666.gitbook.io/intro-java/)
 ###
 ![gitbook_homepage](./picture/gitbook_homepage.png)
 ###
 
 
-<table style="undefined;table-layout: fixed; width: 654px">
+<table style="undefined;table-layout: fixed; width: 688px">
 <colgroup>
-<col style="width: 191px">
+<col style="width: 190px">
 <col style="width: 175px">
-<col style="width: 170px">
-<col style="width: 118px">
+<col style="width: 169px">
+<col style="width: 154px">
 </colgroup>
 <tbody>
   <tr>
