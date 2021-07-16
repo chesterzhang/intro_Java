@@ -1,7 +1,6 @@
-package indi.chester.comparabledemo;
+package indi.chester.comparable;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package indi.chester.comparabledemo;
+package indi.chester.comparable;
 
 public class Goods implements Comparable<Goods>{
 
