@@ -1,48 +1,40 @@
 package indi.chester.animal;
 
-//Cat ¼Ì³ĞÁË Animal
-//²»Ï£ÍûCat±»¼Ì³Ğ, ËùÒÔÊ¹ÓÃfinalĞŞÊÎ
-//ĞÂÔöÁËÒ»¸öprivateÊôĞÔfood
-//ÖØĞ´ÁË¸¸ÀàµÄgetName, getMonth·½·¨, ¸¸ÀàÖĞÎªprotected, ÖØĞ´Îªpublic·½±ãµ÷ÓÃ
-//ÖØĞ´ÁË¸¸ÀàµÄeat·½·¨
+public final class  Cat extends  Animal{
 
-public final class Cat extends Animal {
-	
-	private String food;
+    private String food;
 
-	public Cat(String name, int month, String species,String food ) {
-		//×ÓÀà¹¹ÔìÄ¬ÈÏµ÷ÓÃ¸¸ÀàµÄÎŞ²Î¹¹Ôì·½·¨
-		//¿ÉÒÔÍ¨¹ısuper()µ÷ÓÃ¸¸ÀàÔÊĞí±»·ÃÎÊµÄ´ø²Î¹¹Ôì
-		//super()±ØĞë·ÅÔÚµÚÒ»ĞĞ
-		super(name,month,species);
-		this.setFood(food);
-	}
+    public Cat(String name, int month, String species,String food ) {
+        //å­ç±»æ„é€ é»˜è®¤è°ƒç”¨çˆ¶ç±»çš„æ— å‚æ„é€ æ–¹æ³•
+        //å¯ä»¥é€šè¿‡super()è°ƒç”¨çˆ¶ç±»å…è®¸è¢«è®¿é—®çš„å¸¦å‚æ„é€ 
+        //super()å¿…é¡»æ”¾åœ¨ç¬¬ä¸€è¡Œ
+        super(name,month,species);
+        this.setFood(food);
+    }
 
-	public String getFood() {
-		return food;
-	}
+    public String getFood() {
+        return food;
+    }
 
-	public void setFood(String food) {
-		this.food = food;
-	}
+    public void setFood(String food) {
+        this.food = food;
+    }
 
 
-	@Override
-	public void eat() {
-		System.out.println(this.getName() + "Ï²»¶³Ô"+this.getFood()+"!");
-	}
-	
+    @Override
+    public void eat() {
+        System.out.println(this.getName() + "å–œæ¬¢åƒ"+this.getFood()+"!");
+    }
 
-	@Override
-	public String getName() {
-		return super.getName();
-	}
 
-	@Override
-	public  int getMonth() {
-		return super.getMonth();
-	}
+    @Override
+    public String getName() {
+        return super.getName();
+    }
 
-	 
-	
+    @Override
+    public  int getMonth() {
+        return super.getMonth();
+    }
+
 }

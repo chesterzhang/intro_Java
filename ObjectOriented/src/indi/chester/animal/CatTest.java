@@ -2,29 +2,23 @@ package indi.chester.animal;
 
 public class CatTest {
 
-	public static void main(String[] args) {
-		
-		Animal.sleep();
-		
-		Cat cat1= new Cat("¼¦ÍÈ",3, "½ğ½¥²ã","Ğ¡Óã¸É");
-		Cat cat2= new Cat("Ì©¸ç",4, "ÃÀ¶Ì","¼¦Èâ¹ŞÍ·");
-		
-		cat1.eat();
-		cat2.eat();
-		
-		System.out.println(cat1);
-		System.out.println(cat2);
-		
-		System.out.println("cat1 ºÍ cat2 ÊÇÍ¬Ò»¸ö¶¯ÎïÂğ? "+ cat1.equals(cat2));
-		System.out.println("cat1 ºÍ ×Ö·û´® \"cat1\" ÊÇÍ¬Ò»¸ö¶¯ÎïÂğ? "+ cat1.equals("cat1"));
-		
-		System.out.println("cat1 ÊÇ AnimalµÄÊµÀı»¯Âğ ? "+ (cat1 instanceof  Animal)); 
-		
-		//ĞéÀà²»ÄÜÊµÀı»¯, Ö»ÄÜÍ¨¹ı×ÓÀà¼ä½ÓÏòÉÏ×ªĞÍ
-		Animal tempCat = (Animal) cat1;
-		//Animal a1= new Animal("Íú²Æ",10,"½ğÃ«"); //ĞéÀàÊµÀı»¯Ö±½Ó±¨´í
- 
-	 
-	}
+    public static void main(String[] args) {
+
+        Animal.sleep();//è¾“å‡º: åŠ¨ç‰©éƒ½ä¼šç¡è§‰è§‰!
+
+        Cat cat1= new Cat("é¸¡è…¿",3, "é‡‘æ¸å±‚","å°é±¼å¹²");
+        Cat cat2= new Cat("æ³°å“¥",4, "ç¾çŸ­","é¸¡è‚‰ç½å¤´");
+
+        cat1.eat();//è¾“å‡º: é¸¡è…¿å–œæ¬¢åƒå°é±¼å¹²!
+        cat2.eat();//è¾“å‡º: æ³°å“¥å–œæ¬¢åƒé¸¡è‚‰ç½å¤´!
+
+        System.out.println(cat1);//è¾“å‡º: æ³°å“¥å–œæ¬¢åƒé¸¡è‚‰ç½å¤´!
+        System.out.println(cat2);//è¾“å‡º: æ˜µç§° : æ³°å“¥ , å“ç§ : ç¾çŸ­ , å¹´é¾„ : 4ä¸ªæœˆ
+
+        System.out.println("cat1 å’Œ cat2 æ˜¯åŒä¸€ä¸ªåŠ¨ç‰©å—? "+ cat1.equals(cat2));//false
+
+        System.out.println("cat1 æ˜¯ Animalçš„å®ä¾‹åŒ–å— ? "+ (cat1 instanceof  Animal));//true
+
+    }
 
 }

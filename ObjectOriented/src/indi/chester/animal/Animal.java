@@ -1,101 +1,85 @@
 package indi.chester.animal;
 
-//Ò»¸öÀı×ÓËµÇå ÃæÏò¶ÔÏó ·â×°£¬¼Ì³Ğ£¬¶àÌ¬
-
-//privateÓÃ·¨: 1.½«ËùÓĞ³ÉÔ±±äÁ¿ÉèÖÃÎªprivate, ËùÓĞ³ÉÔ±±äÁ¿±ØĞëÍ¨¹ı·½·¨À´µ÷ÓÃ
-//					   2.½«²»Ï£Íû¶ÔÍâÕ¹Ê¾µÄ·½·¨Ò²ÓÃprivate ĞŞÊÎ
-//protected ÓÃ·¨:1. ¸¸Àà·½·¨ÉèÖÃÎªprotected, ×ÓÀàÖØĞ´Ëü£¬ÉèÖÃÎªpublic£¬ÒÔ¹©¶ÔÏóµ÷ÓÃ
-// 				   ÓÃ·¨: 2. ¸¸Àà·½·¨ÉèÖÃÎªprotected,  ×ÓÀà·½·¨ÀïÃæµ÷ÓÃËü
-//public ÓÃ·¨:   ¶ÔÏóÏ£Íû¶ÔÍâÕ¹Ê¾µÄ·½·¨È«²¿ÓÃpublicĞŞÊÎ
-//abstract ÓÃ·¨: 1.ĞŞÊÎÀà£¬±íÊ¾Ò»¸ö³éÏóÀà, ²»ÄÜ±»ÊµÀı»¯, ÆäÄ¿µÄ¾ÍÊÇÈÃ×ÓÀàÈ¥¼Ì³Ğ 
-
-//ÕâÀïÊµÏÖÁËÒ»¸ö³éÏóÀàAnimal, ²»Ï£ÍûËü±»ÊµÀı»¯,Ö»Ï£ÍûËü±»¼Ì³Ğ
-//¹ÊÓÃabstract ĞŞÊÎAanimal
-//¹Ê½«setter ºÍ getter ·½·¨ÉèÖÃÎªprotected, ²»Ï£ÍûÍ¨¹ıÀàÖ±½Óµ÷ÓÃ,¶øÏ£ÍûÍ¨¹ıÆä×ÓÀàµÄ¶ÔÏóÀ´µ÷ÓÃ
-
-//ËùÓĞ¶¯Îï¶¼»áË¯¾õ¾õ,¹Ê Animal.sleep·½·¨ÓÃstaticĞŞÊÎ
-//ËùÓĞ¶¯Îï¶¼»á³Ô¶«Î÷,µ«ÊÇ²»Í¬µÄ¶¯Îï³ÔµÄ²»Ò»Ñù,¹ÊAnimal.eat·½·¨ÓÃprotectedĞŞÊÎ
-//Ï£Íû×ÓÀàÖØĞ´Animal.eat·½·¨, ¹ÊÓÃabstractĞŞÊÎ
 public abstract class Animal {
 
-	private String name;
-	private int month;
-	private String species;
+    private String name;
+    private int month;
+    private String species;
 
-	protected Animal(String name, int month,String species) {
-		this.setName(name);
-		this.setMonth(month);
-		this.setSpecies(species);
-	}
+    protected Animal(String name, int month, String species) {
+        this.setName(name);
+        this.setMonth(month);
+        this.setSpecies(species);
+    }
 
-	protected String getName() {
-		return name;
-	}
+    protected String getName() {
+        return name;
+    }
 
-	protected void setName(String name) {
-		this.name = name;
-	}
+    protected void setName(String name) {
+        this.name = name;
+    }
 
-	protected int getMonth() {
-		return month;
-	}
+    protected int getMonth() {
+        return month;
+    }
 
-	protected void setMonth(int month) {
-		this.month = month;
-	}
+    protected void setMonth(int month) {
+        this.month = month;
+    }
 
-	protected String getSpecies() {
-		return species;
-	}
+    protected String getSpecies() {
+        return species;
+    }
 
-	protected void setSpecies(String species) {
-		this.species = species;
-	}
+    protected void setSpecies(String species) {
+        this.species = species;
+    }
 
-	// Ë¯¾õ¾õ·½·¨
-	public static void sleep() {
-		System.out.println("¶¯Îï¶¼»áË¯¾õ¾õ!");
-	}
+    // ç¡è§‰è§‰æ–¹æ³•
+    public static void sleep() {
+        System.out.println("åŠ¨ç‰©éƒ½ä¼šç¡è§‰è§‰!");
+    }
 
-	protected abstract void eat() ;
+    protected abstract void eat() ;
 
-	// ÖØĞ´ObjectÀàµÄequals·½·¨,ÓÃÀ´ÅĞ¶Ï"Á½¸ö"¶¯ÎïÊÇ·ñÊÇÒ»¸ö¶¯Îï
-	@Override
-	public boolean equals(Object obj) {
-		if (obj == null) {
-			return false;
-		}
-		try {
-			Animal temp = (Animal) obj;// Òª±£Ö¤obj ¿ÉÒÔ×ª»»ÎªAnimal ÀàĞÍ
-			if (this.getName() == (temp.getName()) && this.getMonth() == temp.getMonth()
-					&& this.getSpecies() == temp.getSpecies()) {
-				return true;
-			} else {
-				return false;
-			}
-		} catch (java.lang.ClassCastException e) {
-			e.printStackTrace();
-			return false;
-		}
+    // é‡å†™Objectç±»çš„equalsæ–¹æ³•,ç”¨æ¥åˆ¤æ–­"ä¸¤ä¸ª"åŠ¨ç‰©æ˜¯å¦æ˜¯ä¸€ä¸ªåŠ¨ç‰©
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        try {
+            Animal temp = (Animal) obj;// è¦ä¿è¯obj å¯ä»¥è½¬æ¢ä¸ºAnimal ç±»å‹
+            if (this.getName() == (temp.getName()) && this.getMonth() == temp.getMonth()
+                    && this.getSpecies() == temp.getSpecies()) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (java.lang.ClassCastException e) {
+            e.printStackTrace();
+            return false;
+        }
 
-	}
+    }
 
-	// ÖØÔØAnimalÀàµÄequals·½·¨
-	public boolean equals(Animal obj) {
-	 
-		if (this.getName() == (obj.getName()) && this.getMonth() == obj.getMonth()
-				&& this.getSpecies() == obj.getSpecies()) {
-			return true;
-		} else {
-			return false;
-		}
+    // é‡è½½Animalç±»çš„equalsæ–¹æ³•
+    public boolean equals(Animal obj) {
 
-	}
+        if (this.getName() == (obj.getName()) && this.getMonth() == obj.getMonth()
+                && this.getSpecies() == obj.getSpecies()) {
+            return true;
+        } else {
+            return false;
+        }
 
-	// ÖØĞ´toString·½·¨
-	@Override
-	public String toString() {
-		return "êÇ³Æ : " + this.getName() + " , Æ·ÖÖ : "+this.getSpecies()+" , ÄêÁä : " + this.getMonth() + "¸öÔÂ";
-	}
+    }
+
+    // é‡å†™toStringæ–¹æ³•
+    @Override
+    public String toString() {
+        return "æ˜µç§° : " + this.getName() + " , å“ç§ : "+this.getSpecies()+" , å¹´é¾„ : " + this.getMonth() + "ä¸ªæœˆ";
+    }
 
 }
