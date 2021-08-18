@@ -8,7 +8,5 @@ public class EasyThreadDemo {
         EasyThread mt2=new EasyThread("mt2");
         mt2.start();
 
-
-
     }
 }

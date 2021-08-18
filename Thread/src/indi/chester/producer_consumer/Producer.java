@@ -1,6 +1,6 @@
 package indi.chester.producer_consumer;
 
-//生产者 线程
+//用于创建 生产者 线程
 public class Producer implements  Runnable{
     private GoodsPipe goodsPipe;
 

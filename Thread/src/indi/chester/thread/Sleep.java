@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.Timer;
 
 //演示Sleep()方法,将线程切换到 阻塞状态
-public class SleepThread implements  Runnable {
+public class Sleep  implements  Runnable {
 
     @Override
     public void run() {

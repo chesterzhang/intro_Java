@@ -1,9 +1,9 @@
 package indi.chester.thread;
 
-public class SleepDemo {
+public class SleepThreadDemo {
     public static void main(String[] args) {
         //创建 实现 Runnable 接口的对象
-        SleepThread st= new SleepThread();
+        Sleep  st= new Sleep ();
 
         //创建线程,传入实现Runnable接口的对象
         Thread t1=new Thread(st,"sleep thread 1");

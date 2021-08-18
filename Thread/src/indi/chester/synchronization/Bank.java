@@ -79,15 +79,11 @@ public class Bank {
             System.out.println("取款200后账户余额为 : " + this.getBalance());
         }
 
-
-
-
     }
 
     @Override
     public String toString() {
         return "Bank [账户 : " + account + ", 余额 : " + balance + "]";
     }
-
 
 }

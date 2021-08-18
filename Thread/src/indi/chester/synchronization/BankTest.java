@@ -1,6 +1,6 @@
 package indi.chester.synchronization;
 
-public class BankDemo {
+public class BankTest {
     public static void main(String[] args) {
         //创建账户, 给定金额为1000
         Bank bank=new Bank("123456789", 1000);
