@@ -6,9 +6,9 @@ import java.util.concurrent.Executors;
 public class FixedThreadPool {
 
     public static void main(String[] args) {
-        ExecutorService es= Executors.newFixedThreadPool(4);
+        ExecutorService threadPool= Executors.newFixedThreadPool(4);
         for (int i = 0; i < Integer.MAX_VALUE; i++) {
-            es.execute(new SimpleTask());
+            threadPool.execute(new SimpleTask1());
         }
         
     }
@@ -16,15 +16,4 @@ public class FixedThreadPool {
 
 }
 
-class SimpleTask implements  Runnable {
 
-    @Override
-    public void run() {
-        try {
-            Thread.sleep(1000000000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        System.out.println(Thread.currentThread().getName());
-    }
-}
