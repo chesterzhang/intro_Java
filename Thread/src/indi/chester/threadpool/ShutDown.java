@@ -1,9 +1,9 @@
 package indi.chester.threadpool;
 
-
+//介紹shutDown(), isShutDown(), isTerminated() 方法
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
+
 
 
 public class ShutDown {
@@ -27,6 +27,7 @@ public class ShutDown {
         System.out.println("isShutDown ? "+threadPool.isShutdown());
         System.out.println("isTerminated ? "+threadPool.isTerminated());
 
+        //shutDown以后提交新任务， 直接报错
         threadPool.execute(new SimpleTask3());
 
 

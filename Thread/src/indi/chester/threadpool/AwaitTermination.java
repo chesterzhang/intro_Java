@@ -16,6 +16,7 @@ public class AwaitTermination {
 
         try {
             //两种情况返回 bool 值 1.到达等待时间, 2.所有任务执行完毕
+            //awaitTermination(parm1, parm2) 方法, 到達parm1(parm2時間單位)后， 綫程池内的綫程是否已經全部執行完畢
             System.out.println(threadPool.awaitTermination(10, TimeUnit.SECONDS));
         } catch (InterruptedException e) {
             e.printStackTrace();
