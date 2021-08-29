@@ -8,15 +8,23 @@ import java.util.concurrent.Executors;
 public class ShutDownNow {
     public static void main(String[] args) {
 
-        ExecutorService threadPool = Executors.newFixedThreadPool(10);
+        ExecutorService threadPool = Executors.newFixedThreadPool(5);
 
-        for (int i = 0; i < 30; i++) {
+        for (int i = 0; i < 10; i++) {
             threadPool.execute(new SimpleTask4());
         }
 
-
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
         List<Runnable> threadList= threadPool.shutdownNow();
+
+        System.out.println("isShutDown ? "+threadPool.isShutdown());
+        System.out.println("isTerminated ? "+threadPool.isTerminated());
+
         for (Runnable t: threadList) {
             System.out.println(t.toString());
         }

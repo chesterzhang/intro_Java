@@ -78,15 +78,15 @@ public class PauseableThreadPool extends ThreadPoolExecutor {
     }
 
     public static void main(String[] args) {
-        PauseableThreadPool threadPool =new PauseableThreadPool(10, 20,10,
+        PauseableThreadPool threadPool =new PauseableThreadPool(1, 1,0,
                 TimeUnit.SECONDS, new LinkedBlockingQueue<>());
 
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 10; i++) {
             threadPool.execute(new SimpleTask5());
         }
 
         try {
-            Thread.sleep(100);
+            Thread.sleep(30);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -102,7 +102,7 @@ public class PauseableThreadPool extends ThreadPoolExecutor {
         System.out.println("线程池被恢复");
 
         //关闭线程池的
-//        threadPool.shutdown();
+        threadPool.shutdown();
         
     }
 
