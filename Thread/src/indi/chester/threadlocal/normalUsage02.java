@@ -28,7 +28,7 @@ public class normalUsage02 {
             threadPool.submit(new Runnable() {
                 @Override
                 public void run() {
-                    String date= new normalUsage00().date(finalI);
+                    String date= new normalUsage02().date(finalI);
                     System.out.println(date);
                 }
             });

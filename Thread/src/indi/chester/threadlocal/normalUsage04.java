@@ -16,17 +16,18 @@ public class normalUsage04 {
         String s=null;
         synchronized (normalUsage04.class){
             s =dateFormat.format(date);
+            dateSet.add(s);
         }
-
         return s;
+
     }
 
     public  static ExecutorService threadPool= Executors.newFixedThreadPool(10);
 
     public  static SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+    public  static HashSet<String> dateSet= new HashSet<>();
 
     public static void main(String[] args) {
-
 
 
         for (int i = 0; i < 1000; i++) {
@@ -35,17 +36,17 @@ public class normalUsage04 {
             threadPool.submit(new Runnable() {
                 @Override
                 public void run() {
-                    String date= new normalUsage00().date(finalI);
-
+                    String date= new normalUsage04().date(finalI);
                     System.out.println(date);
                 }
             });
         }
+
         threadPool.shutdown();
         while (!threadPool.isTerminated()){
 
         }
-
+        System.out.println(dateSet.size());
 
     }
 

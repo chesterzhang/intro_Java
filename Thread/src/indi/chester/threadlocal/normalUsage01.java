@@ -20,7 +20,7 @@ public class normalUsage01 {
             new Thread(new Runnable() {
                 @Override
                 public void run() {
-                    String date= new normalUsage00().date(finalI);
+                    String date= new normalUsage01().date(finalI);
                     System.out.println(date);
                 }
             }).start();
