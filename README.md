@@ -71,48 +71,54 @@
     <td rowspan="6">Thread 多线程基础</td>
     <td>多线程的创建</td>
     <td><a href="https://chesterzhang666.gitbook.io/intro-java/thread">Thread 多线程</a></td>
-    <td><a href="https://chesterzhang666.gitbook.io/intro-java/thread">已完成</a></td>
+    <td><a href="https://github.com/chesterzhang/intro_Java/tree/zhc_dev/Thread/src/indi/chester/threadpool" target="_blank" rel="noopener noreferrer">已完成</a></td>
   </tr>
   <tr>
     <td>sleep 方法的使用</td>
     <td><a href="https://chesterzhang666.gitbook.io/intro-java/thread/sleep-han-shu">sleep 方法</a></td>
-    <td><a href="https://chesterzhang666.gitbook.io/intro-java/thread/sleep-han-shu">已完成</a></td>
+    <td><a href="https://github.com/chesterzhang/intro_Java/tree/zhc_dev/Thread/src/indi/chester/thread" target="_blank" rel="noopener noreferrer">已完成</a></td>
   </tr>
   <tr>
     <td>join 方法的使用</td>
     <td><a href="https://chesterzhang666.gitbook.io/intro-java/thread/join-han-shu">join 方法</a></td>
-    <td><a href="https://chesterzhang666.gitbook.io/intro-java/thread/join-han-shu">已完成</a></td>
+    <td><a href="https://github.com/chesterzhang/intro_Java/tree/zhc_dev/Thread/src/indi/chester/thread" target="_blank" rel="noopener noreferrer">已完成</a></td>
   </tr>
   <tr>
     <td>setPriority 方法的使用</td>
     <td><a href="https://chesterzhang666.gitbook.io/intro-java/thread/setpriority-han-shu">setPriority 方法</a></td>
-    <td><a href="https://chesterzhang666.gitbook.io/intro-java/thread/setpriority-han-shu">已完成</a></td>
+    <td><a href="https://github.com/chesterzhang/intro_Java/tree/zhc_dev/Thread/src/indi/chester/thread" target="_blank" rel="noopener noreferrer">已完成</a></td>
   </tr>
   <tr>
     <td>synchronization关键字与线程同步</td>
     <td><a href="https://chesterzhang666.gitbook.io/intro-java/thread/synchronization-xian-cheng-tong-bu">synchronization 线程同步</a></td>
-    <td><a href="https://chesterzhang666.gitbook.io/intro-java/thread/synchronization-xian-cheng-tong-bu">已完成</a></td>
+    <td><a href="https://github.com/chesterzhang/intro_Java/tree/zhc_dev/Thread/src/indi/chester/synchronization" target="_blank" rel="noopener noreferrer">已完成</a></td>
   </tr>
   <tr>
     <td>wait,notifyAll方法与线程间通信</td>
     <td><a href="https://chesterzhang666.gitbook.io/intro-java/thread/wait-notifyall-xian-cheng-jian-tong-xin">wait notifyAll 线程间通信</a></td>
-    <td><a href="https://chesterzhang666.gitbook.io/intro-java/thread/wait-notifyall-xian-cheng-jian-tong-xin">已完成</a></td>
+    <td><a href="https://github.com/chesterzhang/intro_Java/tree/zhc_dev/Thread/src/indi/chester/producer_consumer" target="_blank" rel="noopener noreferrer">已完成</a></td>
   </tr>
   <tr>
     <td rowspan="3">ThreadPool 线程池</td>
     <td>线程池概念</td>
-    <td><a href="https://chesterzhang666.gitbook.io/intro-java/threadpool-xian-cheng-chi" target="_blank" rel="noopener noreferrer">已完成</a></td>
+    <td><a href="https://chesterzhang666.gitbook.io/intro-java/threadpool-xian-cheng-chi">已完成</a></td>
     <td>无</td>
   </tr>
   <tr>
     <td>自动创建线程池</td>
-    <td><a href="https://chesterzhang666.gitbook.io/intro-java/threadpool-xian-cheng-chi/zi-dong-chuang-jian-xian-cheng-chi" target="_blank" rel="noopener noreferrer">已完成</a></td>
+    <td><a href="https://chesterzhang666.gitbook.io/intro-java/threadpool-xian-cheng-chi/zi-dong-chuang-jian-xian-cheng-chi">已完成</a></td>
     <td><a href="https://github.com/chesterzhang/intro_Java/tree/zhc_dev/Thread/src/indi/chester/threadpool" target="_blank" rel="noopener noreferrer">已完成</a></td>
   </tr>
   <tr>
     <td>关闭线程池</td>
     <td>待完成</td>
     <td><a href="https://github.com/chesterzhang/intro_Java/tree/zhc_dev/Thread/src/indi/chester/threadpool" target="_blank" rel="noopener noreferrer">已完成</a></td>
+  </tr>
+  <tr>
+    <td>ThreadLocal</td>
+    <td>ThreadLocal 应用场景</td>
+    <td>未完成</td>
+    <td><a href="https://github.com/chesterzhang/intro_Java/tree/zhc_dev/Thread/src/indi/chester/threadlocal" target="_blank" rel="noopener noreferrer">更新中</a></td>
   </tr>
   <tr>
     <td rowspan="6"> Reflect 反射</td>
@@ -174,5 +180,4 @@
     <td>无</td>
   </tr>
 </tbody>
-</table>
-
+</table> 
