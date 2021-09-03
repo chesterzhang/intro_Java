@@ -8,7 +8,7 @@ import java.util.concurrent.Executors;
 
 // ThreadLocal 有两个作用:
 //1. 线程隔离, 给每个线程都分配一个独立的对象, 避免多个线程之间队资源进行抢占
-//2.
+//2. 在每个线程内都需要保存的 全局变量， 可以用 ThreadLocal, 避免传递参数
 
 // 利用 threadlocal 给每个线程池中的线程分配一个 dateFormat
 public class normalUsage05 {
@@ -20,7 +20,10 @@ public class normalUsage05 {
         //第一次 对象.get() 就调用 initialValue() 将ThreadLocal 初始化
         SimpleDateFormat sDF=ThreadSafeDateFormatter.dFThreadLocal.get();
         String s =sDF.format(date);
-        dateSet.add(s);
+        synchronized (normalUsage05.class){
+            dateSet.add(s);
+        }
+
         return s;
     }
 
@@ -40,6 +43,7 @@ public class normalUsage05 {
                 }
             });
         }
+        ThreadSafeDateFormatter.dFThreadLocal.remove();
         threadPool.shutdown();
         while (!threadPool.isTerminated()){
 
