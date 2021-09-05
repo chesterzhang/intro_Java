@@ -106,7 +106,7 @@
   </tr>
   <tr>
     <td>自动创建线程池</td>
-    <td><a href="https://chesterzhang666.gitbook.io/intro-java/threadpool-xian-cheng-chi/zi-dong-chuang-jian-xian-cheng-chi">已完成</a></td>
+    <td><a href="https://chesterzhang666.gitbook.io/intro-java/threadpool-xian-cheng-chi/zi-dong-chuang-jian-xian-cheng-chi" target="_blank" rel="noopener noreferrer">已完成</a></td>
     <td><a href="https://github.com/chesterzhang/intro_Java/tree/zhc_dev/Thread/src/indi/chester/threadpool">已完成</a></td>
   </tr>
   <tr>
@@ -116,9 +116,9 @@
   </tr>
   <tr>
     <td>ThreadLocal</td>
-    <td>ThreadLocal 应用场景</td>
-    <td><a href="https://chesterzhang666.gitbook.io/intro-java/threadlocal" target="_blank" rel="noopener noreferrer">更新中</a></td>
-    <td><a href="https://github.com/chesterzhang/intro_Java/tree/zhc_dev/Thread/src/indi/chester/threadlocal" target="_blank" rel="noopener noreferrer">已完成</a></td>
+    <td>什么是ThreadLocal, ThreadLocal的 应用场景</td>
+    <td><a href="https://chesterzhang666.gitbook.io/intro-java/threadlocal" target="_blank" rel="noopener noreferrer">已完成</a></td>
+    <td><a href="https://github.com/chesterzhang/intro_Java/tree/zhc_dev/Thread/src/indi/chester/threadlocal">已完成</a></td>
   </tr>
   <tr>
     <td rowspan="6"> Reflect 反射</td>
