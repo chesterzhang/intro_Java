@@ -106,7 +106,7 @@
   </tr>
   <tr>
     <td>自动创建线程池</td>
-    <td><a href="https://chesterzhang666.gitbook.io/intro-java/threadpool-xian-cheng-chi/zi-dong-chuang-jian-xian-cheng-chi" target="_blank" rel="noopener noreferrer">已完成</a></td>
+    <td><a href="https://chesterzhang666.gitbook.io/intro-java/threadpool-xian-cheng-chi/zi-dong-chuang-jian-xian-cheng-chi">已完成</a></td>
     <td><a href="https://github.com/chesterzhang/intro_Java/tree/zhc_dev/Thread/src/indi/chester/threadpool">已完成</a></td>
   </tr>
   <tr>
@@ -117,7 +117,7 @@
   <tr>
     <td>ThreadLocal</td>
     <td>什么是ThreadLocal, ThreadLocal的 应用场景</td>
-    <td><a href="https://chesterzhang666.gitbook.io/intro-java/threadlocal" target="_blank" rel="noopener noreferrer">已完成</a></td>
+    <td><a href="https://chesterzhang666.gitbook.io/intro-java/threadlocal">已完成</a></td>
     <td><a href="https://github.com/chesterzhang/intro_Java/tree/zhc_dev/Thread/src/indi/chester/threadlocal">已完成</a></td>
   </tr>
   <tr>
@@ -172,6 +172,22 @@
     <td> Factory 工厂模式</td>
     <td><a href="https://chesterzhang666.gitbook.io/intro-java/design-pattern-she-ji-mo-shi/factory-gong-chang-mo-shi">Factory 工厂模式</a></td>
     <td><a href="https://github.com/chesterzhang/intro_Java/tree/zhc_dev/DesignPattern/src/indi/chester/factory">已完成</a></td>
+  </tr>
+  <tr>
+    <td rowspan="3">Maven 项目管理</td>
+    <td>什么是 Maven, Maven 的安装与配置, Maven 与 IDEA 集成</td>
+    <td><a href="https://chesterzhang666.gitbook.io/intro-java/maven" target="_blank" rel="noopener noreferrer">更新中</a></td>
+    <td>无</td>
+  </tr>
+  <tr>
+    <td>Maven 创建 Java 项目</td>
+    <td>未完成</td>
+    <td><a href="https://github.com/chesterzhang/intro_Java/tree/zhc_dev/Maven0" target="_blank" rel="noopener noreferrer">已完成</a></td>
+  </tr>
+  <tr>
+    <td>Maven&nbsp;&nbsp;创建 Java web 项目</td>
+    <td>未完成</td>
+    <td><a href="https://github.com/chesterzhang/intro_Java/tree/zhc_dev/Maven1" target="_blank" rel="noopener noreferrer">已完成</a></td>
   </tr>
   <tr>
     <td>面试八股文</td>
