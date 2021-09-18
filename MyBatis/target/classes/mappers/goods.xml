@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="goods">
+    <select id="selectAll" resultType="indi.chester.mybatis.entity.Goods">
+        select * from  babytun.t_goods ORDER BY  goods_id DESC LIMIT 10
+    </select>
+
+    <select id="selectById" parameterType="Integer" resultType="indi.chester.mybatis.entity.Goods">
+        select * from  babytun.t_goods WHERE goods_id=#{value }
+    </select>
+
+    <select id="selectByPriceRange" parameterType="java.util.Map" resultType="indi.chester.mybatis.entity.Goods">
+        select * from  babytun.t_goods WHERE current_price BETWEEN  #{min} and #{max}
+        ORDER BY current_price  LIMIT 0, #{limit}
+    </select>
+
+    <select id="selectGoodsMap"  resultType="java.util.LinkedHashMap">
+        select g.*, c.category_name FROM babytun.t_goods g, babytun.t_category c
+        WHERE g.category_id = c.category_id LIMIT 10
+    </select>
+
+    <resultMap id="rmGoods" type="indi.chester.mybatis.dto.GoodsDTO">
+        <id property="goods.goodsId" column="goods_id"></id>
+        <result property="goods.title" column="title"></result>
+        <result property="goods.originalCost" column="original_cost"></result>
+        <result property="goods.currentPrice" column="current_price"></result>
+        <result property="goods.discount" column="discount"></result>
+        <result property="goods.isFreeDelivery" column="is_free_delivery"></result>
+        <result property="goods.categoryId" column="category_id"></result>
+        <result property="categoryName" column="category_name"></result>
+    </resultMap>
+    <select id="selectGoodsDTO"  resultMap="rmGoods">
+        select g.*, c.category_name FROM babytun.t_goods g, babytun.t_category c
+        WHERE g.category_id = c.category_id LIMIT 10
+    </select>
+
+</mapper>
+
