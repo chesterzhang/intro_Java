@@ -174,20 +174,26 @@
     <td><a href="https://github.com/chesterzhang/intro_Java/tree/zhc_dev/DesignPattern/src/indi/chester/factory">已完成</a></td>
   </tr>
   <tr>
+    <td>JUnit 测试工具</td>
+    <td>什么是 JUnit, JUnit 的使用</td>
+    <td>未完成</td>
+    <td><a href="https://github.com/chesterzhang/intro_Java/tree/zhc_dev/JUnit" target="_blank" rel="noopener noreferrer">已完成</a></td>
+  </tr>
+  <tr>
     <td rowspan="3">Maven 项目管理</td>
     <td>什么是 Maven, Maven 的安装与配置, Maven 与 IDEA 集成</td>
-    <td><a href="https://chesterzhang666.gitbook.io/intro-java/maven" target="_blank" rel="noopener noreferrer">更新中</a></td>
+    <td><a href="https://chesterzhang666.gitbook.io/intro-java/maven">更新中</a></td>
     <td>无</td>
   </tr>
   <tr>
     <td>Maven 创建 Java 项目</td>
     <td>未完成</td>
-    <td><a href="https://github.com/chesterzhang/intro_Java/tree/zhc_dev/Maven0" target="_blank" rel="noopener noreferrer">已完成</a></td>
+    <td><a href="https://github.com/chesterzhang/intro_Java/tree/zhc_dev/Maven0">已完成</a></td>
   </tr>
   <tr>
-    <td>Maven&nbsp;&nbsp;创建 Java web 项目</td>
+    <td>Maven  创建 Java web 项目</td>
     <td>未完成</td>
-    <td><a href="https://github.com/chesterzhang/intro_Java/tree/zhc_dev/Maven1" target="_blank" rel="noopener noreferrer">已完成</a></td>
+    <td><a href="https://github.com/chesterzhang/intro_Java/tree/zhc_dev/Maven1">已完成</a></td>
   </tr>
   <tr>
     <td>面试八股文</td>
