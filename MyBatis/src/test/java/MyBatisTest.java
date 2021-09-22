@@ -144,4 +144,104 @@ public class MyBatisTest {
         }
     }
 
+    @Test
+    public void testInsert() throws Exception{
+        SqlSession sqlSession=null;
+        try {
+            sqlSession=MyBatisUtils.openSession();
+            Goods goods= new Goods();
+            goods.setTitle("MyBatis测试商品");
+            goods.setSubTitle("MyBatis测试商品子标题");
+            goods.setOriginalCost(200f);
+            goods.setCurrentPrice(100f);
+            goods.setDiscount(0.5f);
+            goods.setIsFreeDelivery(1);
+            goods.setCategoryId(43);
+
+
+            //insert 方法返回代表本次成功插入的记录总数
+            int num =sqlSession.insert("goods.insert",goods);
+            System.out.println(num);
+            //提交事务
+            sqlSession.commit();
+
+        }catch (Exception e){
+            if (sqlSession!=null){
+                sqlSession.rollback();
+            }
+            throw e;
+        }finally {
+            MyBatisUtils.closeSession(sqlSession);
+        }
+    }
+
+    @Test
+    public void testUpdate() throws Exception{
+        SqlSession sqlSession=null;
+        try {
+            sqlSession=MyBatisUtils.openSession();
+            Goods goods=sqlSession.selectOne("goods.selectById",2693);
+            goods.setTitle("更新测试商品");
+            int num =sqlSession.update("goods.update", goods);
+            System.out.println(num);
+            sqlSession.commit();
+        }catch (Exception e){
+            if (sqlSession!=null){
+                sqlSession.rollback();
+            }
+            throw e;
+        }finally {
+            MyBatisUtils.closeSession(sqlSession);
+        }
+    }
+
+    @Test
+    public void testDelete() throws Exception{
+        SqlSession sqlSession=null;
+        try {
+            sqlSession=MyBatisUtils.openSession();
+            int num =sqlSession.delete("goods.delete",2693);
+
+            sqlSession.commit();
+        }catch (Exception e){
+            if (sqlSession!=null){
+                sqlSession.rollback();
+            }
+            throw e;
+        }finally {
+            MyBatisUtils.closeSession(sqlSession);
+        }
+    }
+
+    @Test
+    public void testSelectByTitle() throws Exception{
+        SqlSession sqlSession=null;
+        try {
+            sqlSession=MyBatisUtils.openSession();
+            Map parm = new HashMap();
+            //原文传值 SQL 注入攻击
+            //WHERE title='' or 1=1 or title='亲润 孕妇护肤品豆乳大米盈润保湿胶原蚕丝面膜（18片装）'
+            //parm.put("title", "'' or 1=1 or title='亲润 孕妇护肤品豆乳大米盈润保湿胶原蚕丝面膜（18片装）'");
+
+            //使用预编译
+            //WHERE title="'' or 1=1 or title='亲润 孕妇护肤品豆乳大米盈润保湿胶原蚕丝面膜（18片装）'"
+            parm.put("title", "亲润 孕妇护肤品豆乳大米盈润保湿胶原蚕丝面膜（18片装）");
+
+            //有的时候 使用原文
+            parm.put("order", "ORDER BY goods_id DESC");
+            List<Goods> goodsList= sqlSession.selectList("goods.selectByTitle", parm);
+            for (Goods g: goodsList){
+                System.out.println(g.getGoodsId() +" " + g.getTitle());
+            }
+
+        }catch (Exception e){
+            if (sqlSession!=null){
+                sqlSession.rollback();
+            }
+            throw e;
+        }finally {
+            MyBatisUtils.closeSession(sqlSession);
+        }
+    }
+
 }

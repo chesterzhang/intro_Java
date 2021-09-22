@@ -4,7 +4,10 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <configuration>
-
+    <!-- 驼峰命名自动转换, 数据库字段与Java 成员变量之间, 下划线与驼峰分隔-->
+    <settings>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
 
     <!-- 默认选择生产环境 -->
     <environments default="dev">

@@ -37,5 +37,36 @@
         WHERE g.category_id = c.category_id LIMIT 10
     </select>
 
+    <insert id="insert" parameterType="indi.chester.mybatis.entity.Goods">
+        INSERT INTO babytun.t_goods(title, sub_title, original_cost, current_price, discount, is_free_delivery,category_id)
+        VALUES (#{title}, #{subTitle}, #{originalCost}, #{currentPrice}, #{discount}, #{isFreeDelivery}, #{categoryId})
+<!--        <selectKey resultType="int" keyProperty="goodsId" order="AFTER">-->
+<!--            select  last_insert_id();-->
+<!--        </selectKey>-->
+    </insert>
+    
+    
+    <update id="update" parameterType="indi.chester.mybatis.entity.Goods">
+        UPDATE babytun.t_goods
+        SET
+            title=#{title},
+            sub_title=#{subTitle},
+            original_cost=#{originalCost},
+            current_price=#{currentPrice},
+            discount=#{discount},
+            is_free_delivery=#{isFreeDelivery},
+            category_id=#{categoryId}
+        WHERE goods_id=#{goodsId}
+    </update>
+
+    <delete id="delete" parameterType="Integer">
+        DELETE FROM babytun.t_goods WHERE  goods_id=#{value }
+    </delete>
+    
+    <select id="selectByTitle" parameterType="java.util.Map" resultType="indi.chester.mybatis.entity.Goods">
+--         SELECT  * FROM babytun.t_goods WHERE  title=${title}
+        SELECT  * FROM babytun.t_goods WHERE  title=#{title} ${order}
+    </select>
+
 </mapper>
 
