@@ -177,7 +177,7 @@
     <td>JUnit 测试工具</td>
     <td>什么是 JUnit, JUnit 的使用</td>
     <td>未完成</td>
-    <td><a href="https://github.com/chesterzhang/intro_Java/tree/zhc_dev/JUnit" target="_blank" rel="noopener noreferrer">已完成</a></td>
+    <td><a href="https://github.com/chesterzhang/intro_Java/tree/zhc_dev/JUnit">已完成</a></td>
   </tr>
   <tr>
     <td rowspan="3">Maven 项目管理</td>
@@ -191,9 +191,15 @@
     <td><a href="https://github.com/chesterzhang/intro_Java/tree/zhc_dev/Maven0">已完成</a></td>
   </tr>
   <tr>
-    <td>Maven  创建 Java web 项目</td>
+    <td>Maven&nbsp;&nbsp;创建 Java web 项目</td>
     <td>未完成</td>
     <td><a href="https://github.com/chesterzhang/intro_Java/tree/zhc_dev/Maven1">已完成</a></td>
+  </tr>
+  <tr>
+    <td>MyBatis 数据访问层框架</td>
+    <td>MyBatis 工作流程</td>
+    <td><a href="https://chesterzhang666.gitbook.io/intro-java/mybatis" target="_blank" rel="noopener noreferrer">MyBatis 工作流程</a></td>
+    <td>无</td>
   </tr>
   <tr>
     <td>面试八股文</td>
