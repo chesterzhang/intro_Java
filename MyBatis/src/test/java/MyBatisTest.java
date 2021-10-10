@@ -244,4 +244,100 @@ public class MyBatisTest {
         }
     }
 
+    @Test
+    public void testDynamicSQL() throws Exception{
+        SqlSession sqlSession=null;
+        try {
+            sqlSession=MyBatisUtils.openSession();
+            Map parm = new HashMap();
+            parm.put("categoryId",44);
+            parm.put("currentPrice",500);
+
+            List<Goods> goodsList=sqlSession.selectList("goods.dynamicSQL",parm);
+            for (Goods g:goodsList) {
+                System.out.println(g.getTitle()+" : "+g.getCategoryId()+ " : "+
+                        g.getCurrentPrice());
+            }
+
+        }catch (Exception e){
+            throw e;
+        }finally {
+            MyBatisUtils.closeSession(sqlSession);
+        }
+    }
+
+    //一级缓存
+    @Test
+    public void testLv1Cache() throws Exception{
+        SqlSession sqlSession=null;
+        try {
+            sqlSession=MyBatisUtils.openSession();
+            Goods goods1=sqlSession.selectOne("goods.selectById",1050);
+            Goods goods2=sqlSession.selectOne("goods.selectById",1050);
+            System.out.println("goods1.hashCode : "+goods1.hashCode());
+            System.out.println("goods2.hashCode : "+goods2.hashCode());
+        }catch (Exception e){
+            e.printStackTrace();
+            throw e;
+        }finally {
+            MyBatisUtils.closeSession(sqlSession);
+        }
+
+        try {
+            sqlSession=MyBatisUtils.openSession();
+            Goods goods1=sqlSession.selectOne("goods.selectById",1050);
+            Goods goods2=sqlSession.selectOne("goods.selectById",1050);
+            System.out.println("goods1.hashCode : "+goods1.hashCode());
+            System.out.println("goods2.hashCode : "+goods2.hashCode());
+        }catch (Exception e){
+            e.printStackTrace();
+            throw e;
+        }finally {
+            MyBatisUtils.closeSession(sqlSession);
+        }
+
+        try {
+            sqlSession=MyBatisUtils.openSession();
+            Goods goods1=sqlSession.selectOne("goods.selectById",1050);
+            sqlSession.commit();
+            Goods goods2=sqlSession.selectOne("goods.selectById",1050);
+            System.out.println("goods1.hashCode : "+goods1.hashCode());
+            System.out.println("goods2.hashCode : "+goods2.hashCode());
+        }catch (Exception e){
+            e.printStackTrace();
+            throw e;
+        }finally {
+            MyBatisUtils.closeSession(sqlSession);
+        }
+    }
+
+    //二级缓存
+    @Test
+    public void testLv2Cache() throws Exception{
+        SqlSession sqlSession=null;
+        try {
+            sqlSession=MyBatisUtils.openSession();
+            Goods goods1=sqlSession.selectOne("goods.selectById",1050);
+            System.out.println("goods1.hashCode : "+goods1.hashCode());
+        }catch (Exception e){
+            e.printStackTrace();
+            throw e;
+        }finally {
+            MyBatisUtils.closeSession(sqlSession);
+        }
+
+        try {
+            sqlSession=MyBatisUtils.openSession();
+            Goods goods1=sqlSession.selectOne("goods.selectById",1050);
+            System.out.println("goods1.hashCode : "+goods1.hashCode());
+        }catch (Exception e){
+            e.printStackTrace();
+            throw e;
+        }finally {
+            MyBatisUtils.closeSession(sqlSession);
+        }
+    }
+
 }
+
+

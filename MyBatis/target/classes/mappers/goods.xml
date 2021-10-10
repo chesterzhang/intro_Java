@@ -4,6 +4,9 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="goods">
+    <!-- 开启二级缓存 -->
+    <cache eviction="LRU" flushInterval="600000" size="512" readOnly="true" />
+
     <select id="selectAll" resultType="indi.chester.mybatis.entity.Goods">
         select * from  babytun.t_goods ORDER BY  goods_id DESC LIMIT 10
     </select>
@@ -67,6 +70,21 @@
 --         SELECT  * FROM babytun.t_goods WHERE  title=${title}
         SELECT  * FROM babytun.t_goods WHERE  title=#{title} ${order}
     </select>
+
+    <!-- 动态SQL -->
+    <select id="dynamicSQL" parameterType="java.util.Map" resultType="indi.chester.mybatis.entity.Goods">
+        SELECT  * FROM babytun.t_goods
+        <where>
+            <if test="categoryId!=null">
+                AND category_id=#{categoryId}
+            </if>
+            <if test="currentPrice!=null">
+                AND current_price &lt; #{currentPrice}
+            </if>
+        </where>
+
+    </select>
+
 
 </mapper>
 

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!-- 日志输出格式 -->
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <!-- logger{36} 表示 最多字符为36, 若超过36, 则压缩路径, 保留最后一个类-->
+
+            <pattern> %d{HH:mm:ss:SSS} [%thread]  %-5level %logger{36} -%msg %n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- 打印比debug 级别高的信息
+        从高到低
+        error
+        warn
+        info
+        debug
+        trace
+        开发设置为debug, 上线设置为info
+    -->
+    <root level="debug">
+        <appender-ref  ref="console"/>
+    </root>
+
+</configuration>
