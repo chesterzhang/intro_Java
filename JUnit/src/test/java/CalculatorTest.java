@@ -4,15 +4,14 @@ public class CalculatorTest {
     private Calculator cal=new Calculator();
 
     @Test
-    public void testAdd(){
+    public void add() {
         int result=cal.add(1,2);
         System.out.println(result);
     }
 
     @Test
-    public void testDivide(){
+    public void divide() {
         float result=cal.divide(1,0);
         System.out.println(result);
     }
-
 }
