@@ -202,7 +202,7 @@
   <tr>
     <td class="tg-nrix">JUnit 测试工具</td>
     <td class="tg-nrix">什么是 JUnit, JUnit 的使用</td>
-    <td class="tg-nrix"><a href="https://app.gitbook.com/s/-MeAUhQfs4IbJtX3pwu_/junit-dan-yuan-ce-shi-gong-ju" target="_blank" rel="noopener noreferrer">已完成</a></td>
+    <td class="tg-nrix"><a href="https://chesterzhang666.gitbook.io/intro-java/junit-dan-yuan-ce-shi-gong-ju" target="_blank" rel="noopener noreferrer">已完成</a></td>
     <td class="tg-7h26"><a href="https://github.com/chesterzhang/intro_Java/tree/zhc_dev/JUnit" target="_blank" rel="noopener noreferrer">已完成</a></td>
   </tr>
   <tr>
