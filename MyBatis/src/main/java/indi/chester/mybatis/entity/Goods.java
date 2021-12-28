@@ -1,9 +1,6 @@
 package indi.chester.mybatis.entity;
 
 
-
-
-
 public class Goods {
     private Integer goodsId;
     private String title;
@@ -77,4 +74,5 @@ public class Goods {
     public void setCategoryId(Integer categoryId) {
         this.categoryId = categoryId;
     }
+
 }

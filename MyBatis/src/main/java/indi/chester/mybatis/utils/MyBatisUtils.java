@@ -13,6 +13,7 @@ import java.io.Reader;
  */
 
 public class MyBatisUtils {
+
     private static SqlSessionFactory sqlSessionFactory=null;
 
     static {
@@ -35,4 +36,5 @@ public class MyBatisUtils {
             session.close();
         }
     }
+
 }

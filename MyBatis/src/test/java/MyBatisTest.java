@@ -26,15 +26,18 @@ public class MyBatisTest {
         //创建 SqlSession 对象
         SqlSession sqlSession =null;
         try{
+            //创建 SqlSession 对象, sqlSessionFactory 是 JDBC 的扩展类, 用于上节课交互
             sqlSession =sqlSessionFactory.openSession();
-            //创建 Connection 对象
+            //创建数据库连接对象
             Connection connection=sqlSession.getConnection();
             System.out.println(connection);
         }catch (Exception e){
             e.printStackTrace();
         }finally {
             if (sqlSession!=null){
-                sqlSession.close();//关闭连接池, 或者将连接回收
+                //如果 mybatis-config.xml 里面 <dataSource type="POOLED">, 则是回收连接
+                //如果 mybatis-config.xml 里面 <dataSource type="UNPOOLED">, 则是关闭连接
+                sqlSession.close();
             }
         }
 
@@ -114,7 +117,6 @@ public class MyBatisTest {
         SqlSession sqlSession=null;
         try {
             sqlSession=MyBatisUtils.openSession();
-
             List<Map> goodsListMap=sqlSession.selectList("goods.selectGoodsMap");
             for (Map map: goodsListMap){
                 System.out.println(map);
@@ -134,7 +136,7 @@ public class MyBatisTest {
             sqlSession=MyBatisUtils.openSession();
             List<GoodsDTO> goodsDTOList=sqlSession.selectList("goods.selectGoodsDTO");
             for (GoodsDTO g : goodsDTOList){
-                System.out.println(g.getGoods().getTitle());
+                System.out.println("{ title="+g.getGoods().getTitle() + ", category_name="+g.getCategoryName()+" }");
             }
         }catch (Exception e){
             e.printStackTrace();
@@ -158,13 +160,42 @@ public class MyBatisTest {
             goods.setIsFreeDelivery(1);
             goods.setCategoryId(43);
 
-
             //insert 方法返回代表本次成功插入的记录总数
             int num =sqlSession.insert("goods.insert",goods);
             System.out.println(num);
             //提交事务
             sqlSession.commit();
+            System.out.println(goods.getGoodsId());
+        }catch (Exception e){
+            if (sqlSession!=null){
+                sqlSession.rollback();
+            }
+            throw e;
+        }finally {
+            MyBatisUtils.closeSession(sqlSession);
+        }
+    }
 
+    @Test
+    public void testInsert2() throws Exception{
+        SqlSession sqlSession=null;
+        try {
+            sqlSession=MyBatisUtils.openSession();
+            Goods goods= new Goods();
+            goods.setTitle("MyBatis测试商品");
+            goods.setSubTitle("MyBatis测试商品子标题");
+            goods.setOriginalCost(200f);
+            goods.setCurrentPrice(100f);
+            goods.setDiscount(0.5f);
+            goods.setIsFreeDelivery(1);
+            goods.setCategoryId(43);
+
+            //insert 方法返回代表本次成功插入的记录总数
+            int num =sqlSession.insert("goods.insert2",goods);
+            System.out.println(num);
+            //提交事务
+            sqlSession.commit();
+            System.out.println(goods.getGoodsId());
         }catch (Exception e){
             if (sqlSession!=null){
                 sqlSession.rollback();
@@ -180,7 +211,7 @@ public class MyBatisTest {
         SqlSession sqlSession=null;
         try {
             sqlSession=MyBatisUtils.openSession();
-            Goods goods=sqlSession.selectOne("goods.selectById",2693);
+            Goods goods=sqlSession.selectOne("goods.selectById",2696);
             goods.setTitle("更新测试商品");
             int num =sqlSession.update("goods.update", goods);
             System.out.println(num);
@@ -200,9 +231,9 @@ public class MyBatisTest {
         SqlSession sqlSession=null;
         try {
             sqlSession=MyBatisUtils.openSession();
-            int num =sqlSession.delete("goods.delete",2693);
-
+            int num =sqlSession.delete("goods.delete",2695);
             sqlSession.commit();
+            System.out.println(num);
         }catch (Exception e){
             if (sqlSession!=null){
                 sqlSession.rollback();
@@ -219,15 +250,12 @@ public class MyBatisTest {
         try {
             sqlSession=MyBatisUtils.openSession();
             Map parm = new HashMap();
-            //原文传值 SQL 注入攻击
-            //WHERE title='' or 1=1 or title='亲润 孕妇护肤品豆乳大米盈润保湿胶原蚕丝面膜（18片装）'
-            //parm.put("title", "'' or 1=1 or title='亲润 孕妇护肤品豆乳大米盈润保湿胶原蚕丝面膜（18片装）'");
+            //尝试 SQL 注入攻击
+//            parm.put("title", "'' or 1=1 or 1=''");
 
-            //使用预编译
-            //WHERE title="'' or 1=1 or title='亲润 孕妇护肤品豆乳大米盈润保湿胶原蚕丝面膜（18片装）'"
-            parm.put("title", "亲润 孕妇护肤品豆乳大米盈润保湿胶原蚕丝面膜（18片装）");
 
             //有的时候 使用原文
+            parm.put("title", "亲润 孕妇护肤品豆乳大米盈润保湿胶原蚕丝面膜（18片装）");
             parm.put("order", "ORDER BY goods_id DESC");
             List<Goods> goodsList= sqlSession.selectList("goods.selectByTitle", parm);
             for (Goods g: goodsList){

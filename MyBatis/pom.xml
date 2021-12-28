@@ -9,13 +9,13 @@
     <version>1.0-SNAPSHOT</version>
 
 <!--    &lt;!&ndash;假设maven安装文件夹下的config下的settings.xml 没有改远程仓库&ndash;&gt;-->
-<!--    <repositories>-->
-<!--        <repository>-->
-<!--            <id>aliyun</id>-->
-<!--            <name>aliyun</name>-->
-<!--            <url>https://maven.aliyun.com/repository/public</url>-->
-<!--        </repository>-->
-<!--    </repositories>-->
+    <repositories>
+        <repository>
+            <id>aliyun</id>
+            <name>aliyun</name>
+            <url>https://maven.aliyun.com/repository/public</url>
+        </repository>
+    </repositories>
 
     <dependencies>
         <!-- 增加 mybatis 依赖-->

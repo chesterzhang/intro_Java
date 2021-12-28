@@ -9,7 +9,7 @@
         <setting name="mapUnderscoreToCamelCase" value="true"/>
     </settings>
 
-    <!-- 默认选择生产环境 -->
+    <!-- 默认选择开发环境 -->
     <environments default="dev">
         <!-- 配置不同的数据库链接环境-->
         <environment id="dev">
@@ -18,7 +18,10 @@
             <!-- 采用连接池方式管理数据库连接 -->
             <dataSource type="POOLED">
                 <property name="driver" value="com.mysql.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://localhost:3306/jdbc?useSSL=false&amp;
+<!--                <property name="url" value="jdbc:mysql://localhost:3306/jdbc?useSSL=false&amp;-->
+<!--                useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=Asia/Shanghai&amp;-->
+<!--                allowPublicKeyRetrieval=truenull"/>-->
+                <property name="url" value="jdbc:mysql://localhost:3306/babytun?useSSL=false&amp;
                 useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=Asia/Shanghai&amp;
                 allowPublicKeyRetrieval=truenull"/>
                 <property name="username" value="root"/>

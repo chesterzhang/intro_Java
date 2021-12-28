@@ -4,26 +4,48 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="goods">
-    <!-- 开启二级缓存 -->
+    <!-- 开启二级缓存
+    eviction 清除策略, 和页面置换算法类似, 当缓存对象达到上限后, 自动触发清除
+        1.LRU 清除最近最久未使用的对象, 默认
+        2.FLU, 清除最近访问频率最低的对象
+        3.FIFO 先进先出, 清除最先进来的对象
+        4.SOFT 软引用, 清除基于 垃圾回收期状态和软引用规则的对象, 不推荐
+        5.WEAK 弱引用, 更积极地清除基于 垃圾回收期状态和软引用规则的对象, 不推荐
+
+    flushInterval 每隔多少毫秒清除缓存
+    size 缓存多少个对象或者集合(一个集合算一个对象)
+    readOnly 设置为 true, 代表返回只读缓存, 每次从缓存对象本身, 这种执行效率较高
+             设置为false, 可读可写, 代表每次取出的是缓存对象的"副本", 每一次取出的对象是不同的,安全性较高
+    -->
     <cache eviction="LRU" flushInterval="600000" size="512" readOnly="true" />
 
-    <select id="selectAll" resultType="indi.chester.mybatis.entity.Goods">
-        select * from  babytun.t_goods ORDER BY  goods_id DESC LIMIT 10
+    <!-- 使用用 useCache 属性,  SELECT * 命中率较低-->
+    <select id="selectAll" resultType="indi.chester.mybatis.entity.Goods" useCache="false">
+        select * from  t_goods ORDER BY  goods_id DESC LIMIT 10
     </select>
 
     <select id="selectById" parameterType="Integer" resultType="indi.chester.mybatis.entity.Goods">
-        select * from  babytun.t_goods WHERE goods_id=#{value }
+        select * from  t_goods WHERE goods_id=#{value }
     </select>
 
+    <!-- 多参数传递时利用 Map, 键为参数名, 值为参数值-->
     <select id="selectByPriceRange" parameterType="java.util.Map" resultType="indi.chester.mybatis.entity.Goods">
-        select * from  babytun.t_goods WHERE current_price BETWEEN  #{min} and #{max}
+        select * from  t_goods WHERE current_price BETWEEN  #{min} and #{max}
         ORDER BY current_price  LIMIT 0, #{limit}
     </select>
 
-    <select id="selectGoodsMap"  resultType="java.util.LinkedHashMap">
-        select g.*, c.category_name FROM babytun.t_goods g, babytun.t_category c
+    <!--  利用 LinkedHashMap 保存多表关联结果, 键为字段名, 值为数值-->
+    <select id="selectGoodsMap"  resultType="java.util.LinkedHashMap" >
+        select g.*, c.category_name FROM t_goods g, t_category c
         WHERE g.category_id = c.category_id LIMIT 10
     </select>
+
+
+<!--    &lt;!&ndash; flushkey=true, 执行完SQL语句以后立即清空 且这一句SQL语句返回结果也不会被放入缓存&ndash;&gt;-->
+<!--    <select id="selectGoodsMap"  resultType="java.util.LinkedHashMap" flushCache="true">-->
+<!--        select g.*, c.category_name FROM babytun.t_goods g, babytun.t_category c-->
+<!--        WHERE g.category_id = c.category_id LIMIT 10-->
+<!--    </select>-->
 
     <resultMap id="rmGoods" type="indi.chester.mybatis.dto.GoodsDTO">
         <id property="goods.goodsId" column="goods_id"></id>
@@ -35,22 +57,39 @@
         <result property="goods.categoryId" column="category_id"></result>
         <result property="categoryName" column="category_name"></result>
     </resultMap>
+
     <select id="selectGoodsDTO"  resultMap="rmGoods">
-        select g.*, c.category_name FROM babytun.t_goods g, babytun.t_category c
+        select g.*, c.category_name FROM t_goods g, t_category c
         WHERE g.category_id = c.category_id LIMIT 10
     </select>
 
     <insert id="insert" parameterType="indi.chester.mybatis.entity.Goods">
-        INSERT INTO babytun.t_goods(title, sub_title, original_cost, current_price, discount, is_free_delivery,category_id)
+        INSERT INTO t_goods(title, sub_title, original_cost, current_price, discount, is_free_delivery,category_id)
         VALUES (#{title}, #{subTitle}, #{originalCost}, #{currentPrice}, #{discount}, #{isFreeDelivery}, #{categoryId})
-<!--        <selectKey resultType="int" keyProperty="goodsId" order="AFTER">-->
-<!--            select  last_insert_id();-->
-<!--        </selectKey>-->
+            <!-- 会在插入数据表以后, 将新的 goods_id 字段赋值回 Goods.goodsId-->
+            <selectKey resultType="Integer" keyProperty="goodsId" order="AFTER">
+                select  last_insert_id();
+            </selectKey>
     </insert>
-    
-    
+
+    <insert id="insert2" parameterType="indi.chester.mybatis.entity.Goods"
+            useGeneratedKeys="true" keyProperty="goodsId" keyColumn="goods_id">
+        INSERT INTO t_goods(title, sub_title, original_cost, current_price, discount, is_free_delivery,category_id)
+        VALUES (#{title}, #{subTitle}, #{originalCost}, #{currentPrice}, #{discount}, #{isFreeDelivery}, #{categoryId})
+    </insert>
+
+<!--    &lt;!&ndash; flushkey=true, 执行完SQL语句以后立即清空 且这一句SQL语句返回结果也不会被放入缓存&ndash;&gt;-->
+<!--    <insert id="insert" parameterType="indi.chester.mybatis.entity.Goods" flushCache="true">-->
+<!--    INSERT INTO t_goods(title, sub_title, original_cost, current_price, discount, is_free_delivery,category_id)-->
+<!--    VALUES (#{title}, #{subTitle}, #{originalCost}, #{currentPrice}, #{discount}, #{isFreeDelivery}, #{categoryId})-->
+<!--    &lt;!&ndash;        <selectKey resultType="int" keyProperty="goodsId" order="AFTER">&ndash;&gt;-->
+<!--    &lt;!&ndash;            select  last_insert_id();&ndash;&gt;-->
+<!--    &lt;!&ndash;        </selectKey>&ndash;&gt;-->
+<!--</insert>-->
+
+
     <update id="update" parameterType="indi.chester.mybatis.entity.Goods">
-        UPDATE babytun.t_goods
+        UPDATE t_goods
         SET
             title=#{title},
             sub_title=#{subTitle},
@@ -63,12 +102,18 @@
     </update>
 
     <delete id="delete" parameterType="Integer">
-        DELETE FROM babytun.t_goods WHERE  goods_id=#{value }
+        DELETE FROM  t_goods WHERE  goods_id=#{value }
     </delete>
-    
+
     <select id="selectByTitle" parameterType="java.util.Map" resultType="indi.chester.mybatis.entity.Goods">
---         SELECT  * FROM babytun.t_goods WHERE  title=${title}
-        SELECT  * FROM babytun.t_goods WHERE  title=#{title} ${order}
+        <!-- ${} 文本替换, 未经任何处理对SQL文本替换, SQL 注入攻击 -->
+        <!-- SELECT  * FROM t_goods WHERE  title=${title} LIMIT 5 -->
+
+        <!-- #{} 预编译传值, 防止 SQL 注入攻击 -->
+        <!-- SELECT  * FROM  t_goods WHERE  title=#{title} -->
+
+        <!-- 有的时候 使用原文 -->
+        SELECT  * FROM  t_goods WHERE  title=#{title} ${order}
     </select>
 
     <!-- 动态SQL -->
