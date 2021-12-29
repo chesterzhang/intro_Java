@@ -192,34 +192,38 @@
   <tr>
     <td class="tg-nrix" rowspan="3">Maven 项目管理</td>
     <td class="tg-nrix">Maven 的安装与配置, Maven 与 IDEA 集成</td>
-    <td class="tg-nrix"><a href="https://chesterzhang666.gitbook.io/intro-java/maven/maven-an-zhuang-yu-pei-zhi" target="_blank" rel="noopener noreferrer">Maven 的安装与配置, Maven 与 IDEA 集成</a></td>
+    <td class="tg-nrix"><a href="https://chesterzhang666.gitbook.io/intro-java/maven/maven-an-zhuang-yu-pei-zhi">Maven 的安装与配置, Maven 与 IDEA 集成</a></td>
     <td class="tg-nrix">无</td>
   </tr>
   <tr>
     <td class="tg-nrix">Maven 创建 Java 项目</td>
-    <td class="tg-nrix"><a href="https://chesterzhang666.gitbook.io/intro-java/maven/maven-chuang-jian-java-xiang-mu" target="_blank" rel="noopener noreferrer">Maven 创建 Java 项目</a></td>
+    <td class="tg-nrix"><a href="https://chesterzhang666.gitbook.io/intro-java/maven/maven-chuang-jian-java-xiang-mu">Maven 创建 Java 项目</a></td>
     <td class="tg-nrix"><a href="https://github.com/chesterzhang/intro_Java/tree/zhc_dev/Maven0">已完成</a></td>
   </tr>
   <tr>
-    <td class="tg-nrix">Maven  创建 Java web 项目</td>
-    <td class="tg-nrix"><a href="https://chesterzhang666.gitbook.io/intro-java/maven/maven-chuang-jian-java-web-xiang-mu" target="_blank" rel="noopener noreferrer">Maven  创建 Java web 项目</a></td>
+    <td class="tg-nrix">Maven&nbsp;&nbsp;创建 Java web 项目</td>
+    <td class="tg-nrix"><a href="https://chesterzhang666.gitbook.io/intro-java/maven/maven-chuang-jian-java-web-xiang-mu">Maven&nbsp;&nbsp;创建 Java web 项目</a></td>
     <td class="tg-nrix"><a href="https://github.com/chesterzhang/intro_Java/tree/zhc_dev/Maven1">已完成</a></td>
   </tr>
   <tr>
     <td class="tg-nrix">JUnit 测试工具</td>
     <td class="tg-nrix">什么是 JUnit, JUnit 的使用</td>
-    <td class="tg-nrix"><a href="https://chesterzhang666.gitbook.io/intro-java/junit-dan-yuan-ce-shi-gong-ju" target="_blank" rel="noopener noreferrer">什么是 JUnit, JUnit 的使用</a></td>
+    <td class="tg-nrix"><a href="https://chesterzhang666.gitbook.io/intro-java/junit-dan-yuan-ce-shi-gong-ju">什么是 JUnit, JUnit 的使用</a></td>
     <td class="tg-nrix"><a href="https://github.com/chesterzhang/intro_Java/tree/zhc_dev/JUnit">已完成</a></td>
   </tr>
   <tr>
-    <td class="tg-nrix" rowspan="3">MyBatis 数据访问层框架</td>
+    <td class="tg-nrix" rowspan="4">MyBatis 数据访问层框架</td>
     <td class="tg-nrix">如何在 IDEA 中使用 MyBatis</td>
-    <td class="tg-nrix"><a href="https://chesterzhang666.gitbook.io/intro-java/mybatis/mybatis-huan-jing-pei-zhi" target="_blank" rel="noopener noreferrer">MyBatis 环境配置</a></td>
-    <td class="tg-nrix" rowspan="2"><a href="https://github.com/chesterzhang/intro_Java/tree/zhc_dev/MyBatis" target="_blank" rel="noopener noreferrer">已完成</a></td>
+    <td class="tg-nrix"><a href="https://chesterzhang666.gitbook.io/intro-java/mybatis/mybatis-huan-jing-pei-zhi">MyBatis 环境配置</a></td>
+    <td class="tg-nrix" rowspan="3"><a href="https://github.com/chesterzhang/intro_Java/tree/zhc_dev/MyBatis">已完成</a></td>
   </tr>
   <tr>
     <td class="tg-nrix">将 MyBatis 重复使用的代码封装成一个工具类</td>
-    <td class="tg-nrix"><a href="https://chesterzhang666.gitbook.io/intro-java/mybatis/mybatisutils-gong-ju-lei" target="_blank" rel="noopener noreferrer">MyBatisUtils 工具类</a></td>
+    <td class="tg-nrix"><a href="https://chesterzhang666.gitbook.io/intro-java/mybatis/mybatisutils-gong-ju-lei">MyBatisUtils 工具类</a></td>
+  </tr>
+  <tr>
+    <td class="tg-nrix">MyBatis 数据插入</td>
+    <td class="tg-nrix"><a href="https://chesterzhang666.gitbook.io/intro-java/mybatis/mybatis-shu-ju-cha-ru" target="_blank" rel="noopener noreferrer">MyBatis 数据插入</a></td>
   </tr>
   <tr>
     <td class="tg-nrix">MyBatis 工作流程</td>
@@ -229,7 +233,7 @@
   <tr>
     <td class="tg-nrix">面试八股文</td>
     <td class="tg-nrix">Java 基础 面试八股文, 常见问题 和 参考答案</td>
-    <td class="tg-nrix"><a href="https://chesterzhang666.gitbook.io/intro-java/mian-shi-ba-gu-wen" target="_blank" rel="noopener noreferrer">面试八股文[更新中]</a></td>
+    <td class="tg-nrix"><a href="https://chesterzhang666.gitbook.io/intro-java/mian-shi-ba-gu-wen">面试八股文[更新中]</a></td>
     <td class="tg-nrix">无</td>
   </tr>
 </tbody>
