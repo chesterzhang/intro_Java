@@ -1,5 +1,9 @@
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
 import indi.chester.mybatis.dto.GoodsDTO;
+import indi.chester.mybatis.entity.Classroom;
 import indi.chester.mybatis.entity.Goods;
+import indi.chester.mybatis.entity.Student;
 import indi.chester.mybatis.utils.MyBatisUtils;
 import org.apache.ibatis.io.Resources;
 
@@ -11,6 +15,7 @@ import org.junit.Test;
 import java.io.IOException;
 import java.io.Reader;
 import java.sql.Connection;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -251,8 +256,7 @@ public class MyBatisTest {
             sqlSession=MyBatisUtils.openSession();
             Map parm = new HashMap();
             //尝试 SQL 注入攻击
-//            parm.put("title", "'' or 1=1 or 1=''");
-
+            //parm.put("title", "'' or 1=1 or 1=''");
 
             //有的时候 使用原文
             parm.put("title", "亲润 孕妇护肤品豆乳大米盈润保湿胶原蚕丝面膜（18片装）");
@@ -346,7 +350,9 @@ public class MyBatisTest {
         try {
             sqlSession=MyBatisUtils.openSession();
             Goods goods1=sqlSession.selectOne("goods.selectById",1050);
+            Goods goods2=sqlSession.selectOne("goods.selectById",1050);
             System.out.println("goods1.hashCode : "+goods1.hashCode());
+            System.out.println("goods2.hashCode : "+goods2.hashCode());
         }catch (Exception e){
             e.printStackTrace();
             throw e;
@@ -357,13 +363,115 @@ public class MyBatisTest {
         try {
             sqlSession=MyBatisUtils.openSession();
             Goods goods1=sqlSession.selectOne("goods.selectById",1050);
+            Goods goods2=sqlSession.selectOne("goods.selectById",1050);
             System.out.println("goods1.hashCode : "+goods1.hashCode());
+            System.out.println("goods2.hashCode : "+goods2.hashCode());
         }catch (Exception e){
             e.printStackTrace();
             throw e;
         }finally {
             MyBatisUtils.closeSession(sqlSession);
         }
+    }
+
+
+    @Test
+    public void testPageHelper () throws Exception{
+        SqlSession sqlSession=null;
+        try {
+            sqlSession=MyBatisUtils.openSession();
+            //查询第二页,每一页有10条数据
+            PageHelper.startPage(2,10);
+            Page<Goods> page = (Page) sqlSession.selectList("goods.selectPage");
+            System.out.println("总页数 : "+page.getPages());
+            System.out.println("总记录数 : "+page.getTotal());
+            System.out.println("开始行号 : "+page.getStartRow());
+            System.out.println("结束行号 : "+page.getEndRow());
+            System.out.println("当前页码 : "+page.getPageNum());
+            List<Goods> pageData = page.getResult();//当前页数据
+            for (Goods g : pageData){
+                System.out.println(g.getTitle());
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+            throw e;
+        }finally {
+            MyBatisUtils.closeSession(sqlSession);
+        }
+
+    }
+
+    @Test
+    public void testBatchInsert () throws Exception{
+        SqlSession sqlSession=null;
+        try {
+            sqlSession=MyBatisUtils.openSession();
+            List list=new ArrayList();
+            for (int i = 0; i < 2; i++) {
+                Goods g= new Goods();
+                g.setTitle("批处理测试商品");
+                g.setSubTitle("批处理测试子标题");
+                g.setOriginalCost(100f);
+                g.setCurrentPrice(50f);
+                g.setDiscount(0.5f);
+                g.setIsFreeDelivery(1);
+                g.setCategoryId(43);
+                list.add(g);
+            }
+            sqlSession.insert("goods.batchInsert", list);
+            sqlSession.commit();
+        }catch (Exception e){
+            e.printStackTrace();
+            throw e;
+        }finally {
+            MyBatisUtils.closeSession(sqlSession);
+        }
+
+    }
+
+
+    @Test
+    public void testOneToMany () throws Exception{
+        SqlSession sqlSession=null;
+        try {
+            sqlSession=MyBatisUtils.openSession();
+            List<Classroom> list =sqlSession.selectList("classroom.selectOneToMany");
+
+            for (Classroom c: list){
+                for (Student s : c.getStudentList()){
+                    System.out.println(s.getStudentName());
+                }
+
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+            throw e;
+        }finally {
+            MyBatisUtils.closeSession(sqlSession);
+        }
+
+    }
+
+    @Test
+    public void testManyToOne () throws Exception{
+        SqlSession sqlSession=null;
+        try {
+            sqlSession=MyBatisUtils.openSession();
+//            List<Student> list =sqlSession.selectList("student.selectManyToOne");
+//
+//            for (Student s: list){
+//                System.out.println(s.getClassroom().getClassroomId());
+//
+//            }
+            Student s=sqlSession.selectOne("student.selectOne");
+            System.out.println(s.getClassroomId());
+        }catch (Exception e){
+            e.printStackTrace();
+            throw e;
+        }finally {
+            MyBatisUtils.closeSession(sqlSession);
+        }
+
     }
 
 }
