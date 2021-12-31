@@ -23,7 +23,7 @@
 
     <!-- 如果不用LIMIT, 对于查询结果的数量比较大, 返回的是一个list的, 一般不用二级缓存, 因为这样命中率不高-->
     <select id="selectAll" resultType="indi.chester.mybatis.entity.Goods" useCache="false">
-        select * from  babytun.t_goods ORDER BY  goods_id DESC LIMIT 10
+        select * from  t_goods ORDER BY  goods_id DESC LIMIT 10
     </select>
 
     <!-- 希望执行完这一句之后立刻清空缓存, 而不是等待commit 或者关闭 SqlSession 对象-->
@@ -33,18 +33,18 @@
     </insert>
 
     <select id="selectById" parameterType="Integer" resultType="indi.chester.mybatis.entity.Goods">
-        select * from  babytun.t_goods WHERE goods_id=#{value }
+        select * from  t_goods WHERE goods_id=#{value }
     </select>
 
     <!-- 多参数传递时利用 Map, 键为参数名, 值为参数值-->
     <select id="selectByPriceRange" parameterType="java.util.Map" resultType="indi.chester.mybatis.entity.Goods">
-        select * from  babytun.t_goods WHERE current_price BETWEEN  #{min} and #{max}
+        select * from   t_goods WHERE current_price BETWEEN  #{min} and #{max}
         ORDER BY current_price  LIMIT 0, #{limit}
     </select>
 
     <!--  利用 LinkedHashMap 保存多表关联结果, 键为字段名, 值为数值-->
     <select id="selectGoodsMap"  resultType="java.util.LinkedHashMap" >
-        select g.*, c.category_name FROM babytun.t_goods g, babytun.t_category c
+        select g.*, c.category_name FROM  t_goods g,  t_category c
         WHERE g.category_id = c.category_id LIMIT 10
     </select>
 
@@ -60,9 +60,8 @@
         <result property="goods.categoryId" column="category_id"></result>
         <result property="categoryName" column="category_name"></result>
     </resultMap>
-
     <select id="selectGoodsDTO"  resultMap="rmGoods">
-        select g.*, c.category_name FROM babytun.t_goods g, babytun.t_category c
+        select g.*, c.category_name FROM t_goods g, t_category c
         WHERE g.category_id = c.category_id LIMIT 10
     </select>
 
@@ -102,18 +101,18 @@
 
     <select id="selectByTitle" parameterType="java.util.Map" resultType="indi.chester.mybatis.entity.Goods">
         <!-- ${} 文本替换, 未经任何处理对SQL文本替换, SQL 注入攻击 -->
-        <!-- SELECT  * FROM babytun.t_goods WHERE  title=${title} LIMIT 5 -->
+        <!-- SELECT  * FROM t_goods WHERE  title=${title} LIMIT 5 -->
 
         <!-- #{} 预编译传值, 防止 SQL 注入攻击 -->
-        <!-- SELECT  * FROM  babytun.t_goods WHERE  title=#{title} -->
+        <!-- SELECT  * FROM  t_goods WHERE  title=#{title} -->
 
         <!-- 有的时候 使用原文 -->
-        SELECT  * FROM  babytun.t_goods WHERE  title=#{title} ${order}
+        SELECT  * FROM  t_goods WHERE  title=#{title} ${order}
     </select>
 
     <!-- 动态SQL -->
     <select id="dynamicSQL" parameterType="java.util.Map" resultType="indi.chester.mybatis.entity.Goods">
-        SELECT  * FROM babytun.t_goods
+        SELECT  * FROM  t_goods
         <where>
             <if test="categoryId!=null">
                 AND category_id=#{categoryId}
@@ -124,10 +123,22 @@
         </where>
     </select>
 
+
+    <!-- 将SELECT * FROM t_goods LIMIT 0,1 的结果转换为一个个Goods 对象, 然后将goods_id传入到
+    goodsDetail.selectByGoodsId 中的查询语句进行查询,查询结果放回到 goodsDetailList-->
+    <resultMap id="rmGoods1" type="indi.chester.mybatis.entity.Goods">
+        <id column="goods_id" property="goodsId"/> <!-- 这一句也可以不写 -->
+        <collection property="goodsDetailList" select="goodsDetail.selectByGoodsId"
+                    column="goods_id"/>
+    </resultMap>
+    <select id="selectOneToMany" resultMap="rmGoods1">
+        SELECT * FROM t_goods LIMIT 0,1;
+    </select>
+
     <!-- INSERT INTO table
         VALUES ("a1","a2","a3"), ("b1","b2","b3"), (...) -->
     <select id="batchInsert" parameterType="java.util.List">
-        INSERT INTO babytun.t_goods(title, sub_title, original_cost, current_price, discount, is_free_delivery,category_id)
+        INSERT INTO t_goods(title, sub_title, original_cost, current_price, discount, is_free_delivery,category_id)
         VALUES
             <foreach collection="list" item="item" index="index" separator=",">
                 (#{item.title}, #{item.subTitle}, #{item.originalCost}, #{item.currentPrice},
@@ -136,7 +147,7 @@
     </select>
     
     <select id="selectPage" resultType="indi.chester.mybatis.entity.Goods" >
-        SELECT  * FROM  babytun.t_goods WHERE current_price &lt; 1000
+        SELECT  * FROM  t_goods WHERE current_price &lt; 1000
     </select>
 
 

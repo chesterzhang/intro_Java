@@ -1,9 +1,8 @@
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import indi.chester.mybatis.dto.GoodsDTO;
-import indi.chester.mybatis.entity.Classroom;
 import indi.chester.mybatis.entity.Goods;
-import indi.chester.mybatis.entity.Student;
+import indi.chester.mybatis.entity.GoodsDetail;
 import indi.chester.mybatis.utils.MyBatisUtils;
 import org.apache.ibatis.io.Resources;
 
@@ -86,7 +85,7 @@ public class MyBatisTest {
         SqlSession sqlSession=null;
         try {
             sqlSession=MyBatisUtils.openSession();
-            Goods good=sqlSession.selectOne("goods.selectById",1000);
+            Goods good=sqlSession.selectOne("goods.selectById",739);
             System.out.println(good.getTitle());
         }catch (Exception e){
             e.printStackTrace();
@@ -216,7 +215,7 @@ public class MyBatisTest {
         SqlSession sqlSession=null;
         try {
             sqlSession=MyBatisUtils.openSession();
-            Goods goods=sqlSession.selectOne("goods.selectById",2696);
+            Goods goods=sqlSession.selectOne("goods.selectById",902);
             goods.setTitle("更新测试商品");
             int num =sqlSession.update("goods.update", goods);
             System.out.println(num);
@@ -236,7 +235,7 @@ public class MyBatisTest {
         SqlSession sqlSession=null;
         try {
             sqlSession=MyBatisUtils.openSession();
-            int num =sqlSession.delete("goods.delete",2695);
+            int num =sqlSession.delete("goods.delete",903);
             sqlSession.commit();
             System.out.println(num);
         }catch (Exception e){
@@ -435,21 +434,17 @@ public class MyBatisTest {
         SqlSession sqlSession=null;
         try {
             sqlSession=MyBatisUtils.openSession();
-            List<Classroom> list =sqlSession.selectList("classroom.selectOneToMany");
-
-            for (Classroom c: list){
-                for (Student s : c.getStudentList()){
-                    System.out.println(s.getStudentName());
-                }
-
+            List<Goods> list= sqlSession.selectList("goods.selectOneToMany");
+            for (Goods goods:list){
+                System.out.println(goods.getTitle()+":"+ goods.getGoodsDetailList().size());
             }
+
         }catch (Exception e){
             e.printStackTrace();
             throw e;
         }finally {
             MyBatisUtils.closeSession(sqlSession);
         }
-
     }
 
     @Test
@@ -457,14 +452,10 @@ public class MyBatisTest {
         SqlSession sqlSession=null;
         try {
             sqlSession=MyBatisUtils.openSession();
-//            List<Student> list =sqlSession.selectList("student.selectManyToOne");
-//
-//            for (Student s: list){
-//                System.out.println(s.getClassroom().getClassroomId());
-//
-//            }
-            Student s=sqlSession.selectOne("student.selectOne");
-            System.out.println(s.getClassroomId());
+            List<GoodsDetail> list = sqlSession.selectList("goodsDetail.selectManyToOne");
+            for (GoodsDetail gd: list){
+                System.out.println(gd.getGdPicUrl()+ " : "+gd.getGoods().getTitle());
+            }
         }catch (Exception e){
             e.printStackTrace();
             throw e;

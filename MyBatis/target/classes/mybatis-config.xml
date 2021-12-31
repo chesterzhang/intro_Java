@@ -28,9 +28,6 @@
             <!-- 采用 MyBatis 连接池方式管理数据库连接 -->
 <!--            <dataSource type="POOLED">-->
 <!--                <property name="driver" value="com.mysql.jdbc.Driver"/>-->
-<!--&lt;!&ndash;                <property name="url" value="jdbc:mysql://localhost:3306/jdbc?useSSL=false&amp;&ndash;&gt;-->
-<!--&lt;!&ndash;                useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=Asia/Shanghai&amp;&ndash;&gt;-->
-<!--&lt;!&ndash;                allowPublicKeyRetrieval=truenull"/>&ndash;&gt;-->
 <!--                <property name="url" value="jdbc:mysql://localhost:3306/babytun?useSSL=false&amp;-->
 <!--                useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=Asia/Shanghai&amp;-->
 <!--                allowPublicKeyRetrieval=truenull"/>-->
@@ -41,7 +38,7 @@
             <!-- C3P0 连接池 -->
             <dataSource type="indi.chester.mybatis.datasource.C3P0DataSourceFactory">
                 <property name="driverClass" value="com.mysql.jdbc.Driver"/>
-                <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/?useSSL=false&amp;
+                <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/babytun?useSSL=false&amp;
                                 useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=Asia/Shanghai&amp;
                                 allowPublicKeyRetrieval=truenull"/>
                 <property name="user" value="root"/>
@@ -73,8 +70,7 @@
 
     <mappers>
         <mapper resource="mappers/goods.xml" />
-        <mapper resource="mappers/student.xml" />
-        <mapper resource="mappers/classroom.xml" />
+        <mapper resource="mappers/goods_detail.xml" />
     </mappers>
 
     
