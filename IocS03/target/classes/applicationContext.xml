@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+
+    <!-- 通过 setter 实现对象属性注入 -->
+    <bean id="sweetApple" class="indi.chester.spring.ioc.entity.Apple">
+        <!-- Ioc 容器自动利用反射机制在运行时吊桶 setter 方法为属性赋值 -->
+        <property name ="title" value="红富士"/>
+        <property  name="color" value="红色"/>
+        <property  name="origin" value="欧洲"/>
+        <property  name="price" value="9.9"/>
+    </bean>
+
+    <!-- 通过 setter 实现对象注入 -->
+    <bean id="lily" class="indi.chester.spring.ioc.entity.Child">
+        <property name="name" value="Lily"/>
+        <!-- 注入依赖对象 -->
+        <property name="apple" ref="sweetApple"/>
+    </bean>
+
+    <!-- 通过 setter 实现对象属性注入 -->
+    <bean id="sourApple" class="indi.chester.spring.ioc.entity.Apple">
+        <!-- Ioc 容器自动利用反射机制在运行时吊桶 setter 方法为属性赋值 -->
+        <property name ="title" value="青苹果"/>
+        <property  name="color" value="绿色"/>
+        <property  name="origin" value="中亚洲"/>
+        <property  name="price" value="7.9"/>
+    </bean>
+
+    <!-- 通过 构造方法实现依赖 注入 -->
+    <bean id="tom" class="indi.chester.spring.ioc.entity.Child">
+        <constructor-arg name="name" value="Tom"/>
+        <constructor-arg name="apple" ref="sourApple"/>
+    </bean>
+
+</beans>
