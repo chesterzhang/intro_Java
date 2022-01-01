@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="sweetApple" class="indi.chester.spring.ioc.entity.Apple">
+        <property name="title" value="红富士"/>
+        <property name="origin" value="欧洲"/>
+        <property name="color" value="红色"/>
+    </bean>
+
+    <bean id="sourApple" class="indi.chester.spring.ioc.entity.Apple">
+        <property name="title" value="青苹果"/>
+        <property name="origin" value="中亚"/>
+        <property name="color" value="绿色"/>
+    </bean>
+
+    <bean id="lily" class="indi.chester.spring.ioc.entity.Child">
+        <property name="name" value="Lily"/>
+        <property name="apple" ref="sweetApple"/>
+    </bean>
+
+    <bean id="tom" class="indi.chester.spring.ioc.entity.Child">
+        <property name="name" value="Tom"/>
+        <property name="apple" ref="sourApple"/>
+    </bean>
+
+</beans>
