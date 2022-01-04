@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <bean id="userDao" class="indi.chester.spring.aop.dao.UserDao"/>
+    <bean id="employeeDao" class="indi.chester.spring.aop.dao.EmployeeDao"/>
+    <bean id="userService" class="indi.chester.spring.aop.service.UserService">
+        <property name="userDao" ref="userDao"/>
+    </bean>
+    <bean id="employeeService" class="indi.chester.spring.aop.service.EmployeeService">
+        <property name="employeeDao" ref="employeeDao"/>
+    </bean>
+
+    <!-- 切面类 -->
+    <bean id="methodAspect" class="indi.chester.spring.aop.aspect.MethodAspect"/>
+
+    <!-- 配置 AOP -->
+    <aop:config>
+        <!-- pointcut 切点, 使用 execution 表达式描述切面的作用范围  -->
+
+        <!-- pointcut 切点表达式: pubilc 访问修饰符, * 任意返回类型, .. 包通配符, *.* 任意类的任意方法, (..) 参数通配符 -->
+        <!-- 作用于 indi.chester 包下所有public类的运行 -->
+        <aop:pointcut id="pointcut" expression="execution(public * indi.chester..*.*(..))"/>
+
+        <!-- 作用于 indi.chester 包下所有public Service类的 有两个参数(第一个参数为String)的方法 运行 -->
+<!--        <aop:pointcut id="pointcut" expression="execution(public * indi.chester..*Service.*(String,*))"/>-->
+
+        <!-- 定义切面类 -->
+        <aop:aspect ref="methodAspect">
+            <!-- before 通知, 在目标方法运行前, 先去执行 切面类 的 切面方法-->
+            <aop:before method="printExecutionTime" pointcut-ref="pointcut"/>
+
+            <!-- after 通知,在目标方法运行后,再执行切面类的切面方法,,after和after-returning 的运行顺序是根据配置文件的先后顺序-->
+            <aop:after method="doAfter" pointcut-ref="pointcut"/>
+
+            <!-- after-returning通知,在目标方法返回值以后,再执行切面类的切面方法,after和after-returning 的运行顺序是根据配置文件的先后顺序-->
+            <aop:after-returning method="doAfterReturning"  returning="ret" pointcut-ref="pointcut"/>
+
+            <!-- after-throwing, 在目标方法抛出异常后, 再执行切面类的切面方法,after和after-throwing 的运行顺序是根据配置文件的先后顺序-->
+            <aop:after-throwing method="doAfterThrowing" throwing="th" pointcut-ref="pointcut"/>
+        </aop:aspect>
+    </aop:config>
+
+</beans>
