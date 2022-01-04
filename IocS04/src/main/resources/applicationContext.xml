@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="computer1" class="indi.chester.spring.ioc.entity.Computer">
+        <constructor-arg name="brand" value="联想"/>
+        <constructor-arg name="type" value="台式机"/>
+        <constructor-arg name="sn" value="20160000"/>
+        <constructor-arg name="price" value="6000"/>
+    </bean>
+
+    <!--    匿名 bean, 实际工作中不推荐使用-->
+    <bean   class="indi.chester.spring.ioc.entity.Computer">
+        <constructor-arg name="brand" value="惠普"/>
+        <constructor-arg name="type" value="服务器"/>
+        <constructor-arg name="sn" value="20160002"/>
+        <constructor-arg name="price" value="8000"/>
+    </bean>
+
+    <bean   class="indi.chester.spring.ioc.entity.Computer">
+        <constructor-arg name="brand" value="华硕"/>
+        <constructor-arg name="type" value="笔记本"/>
+        <constructor-arg name="sn" value="20160003"/>
+        <constructor-arg name="price" value="10000"/>
+    </bean>
+
+    <bean id="company" class="indi.chester.spring.ioc.entity.Company">
+        <property name="rooms">
+            <!-- set 标签 底层是 LinkedHashSet,map 标签 底层是 LinkedHashMap, List 标签底层则是 ArrayList -->
+            <set>
+                <value>2001-总裁办公室</value>
+                <value>2002-会议室</value>
+            </set>
+        </property>
+        <property name="computers">
+            <!-- set 标签 底层是 LinkedHashSet,map 标签 底层是 LinkedHashMap, List 标签底层则是 ArrayList -->
+            <map>
+                <entry key="dev-88172" value-ref="computer1" />
+                <entry key="dev-88173">
+                    <bean class="indi.chester.spring.ioc.entity.Computer">
+                        <constructor-arg name="brand" value="戴尔"/>
+                        <constructor-arg name="type" value="笔记本"/>
+                        <constructor-arg name="sn" value="20160001"/>
+                        <constructor-arg name="price" value="5000"/>
+                    </bean>
+                </entry>
+            </map>
+        </property>
+        <property name="info">
+            <props>
+                <prop key="phone">0755-12345678</prop>
+                <prop key="address">深圳市南山区XX路XX号</prop>
+            </props>
+        </property>
+    </bean>
+
+</beans>
