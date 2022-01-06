@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <bean id="userDao" class="indi.chester.spring.aop.dao.UserDao"/>
+    <bean id="employeeDao" class="indi.chester.spring.aop.dao.EmployeeDao"/>
+    <bean id="userService" class="indi.chester.spring.aop.service.UserService">
+        <property name="userDao" ref="userDao"/>
+    </bean>
+    <bean id="employeeService" class="indi.chester.spring.aop.service.EmployeeService">
+        <property name="employeeDao" ref="employeeDao"/>
+    </bean>
+
+    <!-- 切面类 -->
+    <bean id="methodChecker" class="indi.chester.spring.aop.aspect.MethodChecker"/>
+    <aop:config>
+        <aop:pointcut id="pointcut" expression="execution(public * indi.chester..*.*(..))"/>
+        <aop:aspect ref="methodChecker">
+            <!-- 环绕通知 -->
+            <aop:around method="check" pointcut-ref="pointcut"/>
+        </aop:aspect>
+    </aop:config>
+
+
+</beans>
