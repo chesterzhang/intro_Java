@@ -11,8 +11,9 @@
 
     <servlet-mapping>
         <servlet-name>MyFirstServlet</servlet-name>
-        <url-pattern>/myFirstServlet</url-pattern>
+        <url-pattern>/my_first_servlet</url-pattern>
     </servlet-mapping>
+
 
     <servlet>
         <servlet-name>DispatchServlet</servlet-name>
@@ -21,8 +22,19 @@
 
     <servlet-mapping>
         <servlet-name>DispatchServlet</servlet-name>
-        <url-pattern>/dispatchServlet</url-pattern>
+        <url-pattern>/dispatch_servlet</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GetDispatchedServlet</servlet-name>
+        <servlet-class>indi.chester.servlet.GetDispatchedServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>GetDispatchedServlet</servlet-name>
+        <url-pattern>/get_dispatched_servlet</url-pattern>
+    </servlet-mapping>
+
 
     <servlet>
         <servlet-name>RedirectServlet</servlet-name>
@@ -31,7 +43,58 @@
 
     <servlet-mapping>
         <servlet-name>RedirectServlet</servlet-name>
-        <url-pattern>/redirectServlet</url-pattern>
+        <url-pattern>/redirect_servlet</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GetRedirectedServlet</servlet-name>
+        <servlet-class>indi.chester.servlet.GetRedirectedServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>GetRedirectedServlet</servlet-name>
+        <url-pattern>/get_redirected_servlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SetCookieServlet</servlet-name>
+        <servlet-class>indi.chester.servlet.SetCookieServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SetCookieServlet</servlet-name>
+        <url-pattern>/set_cookie_servlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ReadCookieServlet</servlet-name>
+        <servlet-class>indi.chester.servlet.ReadCookieServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ReadCookieServlet</servlet-name>
+        <url-pattern>/read_cookie_servlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SetSessionServlet</servlet-name>
+        <servlet-class>indi.chester.servlet.SetSessionServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SetSessionServlet</servlet-name>
+        <url-pattern>/set_session_servlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ReadSessionServlet</servlet-name>
+        <servlet-class>indi.chester.servlet.ReadSessionServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ReadSessionServlet</servlet-name>
+        <url-pattern>/read_session_servlet</url-pattern>
+    </servlet-mapping>
+
 
 </web-app>

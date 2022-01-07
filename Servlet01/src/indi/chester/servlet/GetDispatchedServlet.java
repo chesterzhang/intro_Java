@@ -7,16 +7,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.io.Writer;
 
 
-public class DispatchServlet extends HttpServlet {
+public class GetDispatchedServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-        //请求转发
-        request.getRequestDispatcher("/get_dispatched_servlet").forward(request,response);
-
+        PrintWriter writer = response.getWriter();
+        writer.println("Get dispatched ! ");
     }
-
 }
