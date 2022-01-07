@@ -4,7 +4,7 @@
 ###
 ![gitbook_homepage](./picture/gitbook_homepage.png)
 ###
-
+ 
  
 <table class="tg">
 <thead>
@@ -189,6 +189,28 @@
     <td class="tg-nrix"><a href="https://github.com/chesterzhang/intro_Java/tree/zhc_dev/DesignPattern/src/indi/chester/decorator">已完成</a></td>
   </tr>
   <tr>
+    <td class="tg-nrix" rowspan="5">Servlet</td>
+    <td class="tg-nrix">在 IDEA 中运行 Tomcat</td>
+    <td class="tg-nrix">在 IDEA 中运行 Tomcat[未完成]</td>
+    <td class="tg-nrix" rowspan="5"><a href="https://github.com/chesterzhang/intro_Java/tree/zhc_dev/Servlet01" target="_blank" rel="noopener noreferrer">已完成</a></td>
+  </tr>
+  <tr>
+    <td class="tg-nrix">get 与 post 请求</td>
+    <td class="tg-nrix">get 与 post 请求[未完成]</td>
+  </tr>
+  <tr>
+    <td class="tg-nrix">Servlet 生命周期</td>
+    <td class="tg-nrix">Servlet 生命周期[未完成]</td>
+  </tr>
+  <tr>
+    <td class="tg-nrix">请求转发 与 响应 重定向</td>
+    <td class="tg-nrix">请求转发 与 响应 重定向[未完成]</td>
+  </tr>
+  <tr>
+    <td class="tg-nrix">Cookie 与 Session</td>
+    <td class="tg-nrix">Cookie 与 Session[未完成]</td>
+  </tr>
+  <tr>
     <td class="tg-nrix" rowspan="3">Maven 项目管理</td>
     <td class="tg-nrix">Maven 的安装与配置, Maven 与 IDEA 集成</td>
     <td class="tg-nrix"><a href="https://chesterzhang666.gitbook.io/intro-java/maven/maven-an-zhuang-yu-pei-zhi">Maven 的安装与配置, Maven 与 IDEA 集成</a></td>
@@ -200,8 +222,8 @@
     <td class="tg-nrix"><a href="https://github.com/chesterzhang/intro_Java/tree/zhc_dev/Maven0">已完成</a></td>
   </tr>
   <tr>
-    <td class="tg-nrix">Maven  创建 Java web 项目</td>
-    <td class="tg-nrix"><a href="https://chesterzhang666.gitbook.io/intro-java/maven/maven-chuang-jian-java-web-xiang-mu">Maven  创建 Java web 项目</a></td>
+    <td class="tg-nrix">Maven&nbsp;&nbsp;创建 Java web 项目</td>
+    <td class="tg-nrix"><a href="https://chesterzhang666.gitbook.io/intro-java/maven/maven-chuang-jian-java-web-xiang-mu">Maven&nbsp;&nbsp;创建 Java web 项目</a></td>
     <td class="tg-nrix"><a href="https://github.com/chesterzhang/intro_Java/tree/zhc_dev/Maven1">已完成</a></td>
   </tr>
   <tr>
@@ -214,7 +236,7 @@
     <td class="tg-nrix" rowspan="8">MyBatis 数据访问层框架</td>
     <td class="tg-nrix">如何在 IDEA 中使用 MyBatis</td>
     <td class="tg-nrix"><a href="https://chesterzhang666.gitbook.io/intro-java/mybatis/mybatis-huan-jing-pei-zhi">MyBatis 环境配置</a></td>
-    <td class="tg-nrix" rowspan="7"><a href="https://github.com/chesterzhang/intro_Java/tree/zhc_dev/MyBatis" target="_blank" rel="noopener noreferrer">已完成</a></td>
+    <td class="tg-nrix" rowspan="7"><a href="https://github.com/chesterzhang/intro_Java/tree/zhc_dev/MyBatis">已完成</a></td>
   </tr>
   <tr>
     <td class="tg-nrix">将 MyBatis 重复使用的代码封装成一个工具类</td>
@@ -230,11 +252,11 @@
   </tr>
   <tr>
     <td class="tg-nrix">OneToMany 一对多查询</td>
-    <td class="tg-nrix"><a href="https://chesterzhang666.gitbook.io/intro-java/mybatis/onetomany-cha-xun" target="_blank" rel="noopener noreferrer">OneToMany 一对多查询</a></td>
+    <td class="tg-nrix"><a href="https://chesterzhang666.gitbook.io/intro-java/mybatis/onetomany-cha-xun">OneToMany 一对多查询</a></td>
   </tr>
   <tr>
     <td class="tg-nrix">ManyToOne 多对一查询</td>
-    <td class="tg-nrix"><a href="https://app.gitbook.com/s/-MeAUhQfs4IbJtX3pwu_/mybatis/manytoone-cha-xun" target="_blank" rel="noopener noreferrer">ManyToOne 多对一查询</a></td>
+    <td class="tg-nrix"><a href="https://app.gitbook.com/s/-MeAUhQfs4IbJtX3pwu_/mybatis/manytoone-cha-xun">ManyToOne 多对一查询</a></td>
   </tr>
   <tr>
     <td class="tg-nrix">PageHelper 分页插件</td>
