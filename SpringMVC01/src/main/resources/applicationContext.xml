@@ -21,10 +21,19 @@
     -->
     <context:component-scan base-package="indi.chester.springmvc"></context:component-scan>
 
-    <!-- 启用Spring MVC的注解开发模式 -->
-    <mvc:annotation-driven/>
+    <!-- 启用Spring MVC的注解开发模式, 使用自定义的日期转换器 -->
+    <mvc:annotation-driven conversion-service="conversionService"/>
 
     <!-- 将图片/JS/CSS等静态资源排除在外,可提高执行效率 -->
     <mvc:default-servlet-handler/>
+
+    <!--  全局生效的 日期转换  -->
+    <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+        <property name="converters">
+            <set>
+                <bean class="indi.chester.springmvc.converter.MyDateController" />
+            </set>
+        </property>
+    </bean>
 
 </beans>
