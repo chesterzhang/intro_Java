@@ -95,6 +95,25 @@
         <servlet-name>ReadSessionServlet</servlet-name>
         <url-pattern>/read_session_servlet</url-pattern>
     </servlet-mapping>
+    
 
+    <filter>
+        <filter-name>MyFilter</filter-name>
+        <filter-class>indi.chester.filter.MyFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>MyFilter</filter-name>
+        <url-pattern>/blocked.html</url-pattern>
+    </filter-mapping>
+
+    <context-param>
+        <param-name>project-name</param-name>
+        <param-value>java-servlet-demo</param-value>
+    </context-param>
+
+    <listener>
+        <listener-class>indi.chester.listener.MyListener</listener-class>
+    </listener>
 
 </web-app>
