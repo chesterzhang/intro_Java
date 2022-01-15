@@ -21,8 +21,18 @@
     -->
     <context:component-scan base-package="indi.chester.springmvc"></context:component-scan>
 
-    <!-- 启用Spring MVC的注解开发模式, 使用自定义的日期转换器 -->
-    <mvc:annotation-driven conversion-service="conversionService"/>
+    <!-- 启用Spring MVC的注解开发模式, 使用自定义的日期转换器, 解决响应中文乱码 -->
+    <mvc:annotation-driven conversion-service="conversionService">
+        <mvc:message-converters>
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                <property name="supportedMediaTypes">
+                    <list>
+                        <value>text/html;charset=utf-8</value>
+                    </list>
+                </property>
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
 
     <!-- 将图片/JS/CSS等静态资源排除在外,可提高执行效率 -->
     <mvc:default-servlet-handler/>
