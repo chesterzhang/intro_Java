@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>RESTFUL_实验室</title>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script >
+        $(function(){
+            $("#btnGet").click(function () {
+                $.ajax({
+                    url : "http://localhost:8080/restful/request",
+                    type : "get" ,
+                    dataType : "json" ,
+                    success : function(json){
+                        $("#message").text(json.message);
+                    }
+                })
+            })
+        })
+
+        $(function(){
+            $("#btnPost").click(function () {
+                $.ajax({
+                    url : "/restful/request/100",
+                    type : "post" ,
+                    data: "name=Jacky&age=23",
+                    dataType : "json" ,
+                    success : function(json){
+                        $("#message").text(json.message+" : "+json.id);
+                    }
+                })
+            })
+        })
+        $(function(){
+            $("#btnPut").click(function () {
+                $.ajax({
+                    url : "/restful/request",
+                    type : "put" ,
+                    data: "name=Jacky&age=23",
+                    dataType : "json" ,
+                    success : function(json){
+                        $("#message").text(json.message);
+                    }
+                })
+            })
+        })
+
+        $(function(){
+            $("#btnDelete").click(function () {
+                $.ajax({
+                    url : "/restful/request",
+                    type : "delete" ,
+                    data: "name=Jacky&age=23",
+                    dataType : "json" ,
+                    success : function(json){
+                        $("#message").text(json.message);
+                    }
+                })
+            })
+        })
+
+        $(function () {
+            $("#btnPersons").click(function () {
+                $.ajax({
+                    url : "/restful/persons",
+                    type : "get",
+                    dataType : "json",
+                    success : function(json){
+                        console.info(json);
+                        for(var i = 0 ; i < json.length;i++){
+                            var p = json[i];
+                            $("#divPersons").append("<h2>" + p.name + "-" + p.age + "-" + p.birthday+ "</h2>")
+                        }
+                    }
+                })
+            })
+        })
+
+    </script>
+
+</head>
+
+<body>
+    <input type="button" id="btnGet" value="发送Get请求">
+    <input type="button" id="btnPost" value="发送Post请求">
+    <input type="button" id="btnPut" value="发送Put请求">
+    <input type="button" id="btnDelete" value="发送Delete请求">
+    <h1 id="message"></h1>
+    <hr/>
+    <input type="button" id="btnPersons" value="查询所有人员">
+    <div id="divPersons"></div>
+</body>
+
+</html>
