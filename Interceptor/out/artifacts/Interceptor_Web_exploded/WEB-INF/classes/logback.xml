@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!-- 向控制台输出日志 -->
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <!-- 日志输出格式: 线程, 日期(天), 类名(最多10个字符, 日志内容,换行)-->
+            <pattern>[%thread] %d %level %logger{10} - %msg %n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- 向文件中滚动输出日志-->
+    <appender name="accessHistoryLog" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!-- 按照时间(天数)滚动输出 -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>d:/intro_Java/resources/logs/history.%d.log</fileNamePattern>
+        </rollingPolicy>
+        <encoder>
+            <pattern>[%thread] %d %level %logger{10} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!--大于 debug级别的要在控制台输出-->
+    <root level="debug">
+        <appender-ref ref="console"/>
+    </root>
+
+    <!-- 向文件中输出日志, 但是不在控制台中输出(additivity="false") -->
+    <logger name="indi.chester.restful.interceptor.AccessHistoryInterceptor"
+            level="INFO" additivity="false">
+        <appender-ref ref="accessHistoryLog"/>
+    </logger>
+</configuration>

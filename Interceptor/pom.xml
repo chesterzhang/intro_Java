@@ -50,6 +50,12 @@
             <scope>provided</scope><!-- 开发过程中才起作用, 打包发布时为了避免与Tomcat冲突而忽略 -->
         </dependency>
 
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.2.3</version>
+        </dependency>
+
     </dependencies>
 
 </project>

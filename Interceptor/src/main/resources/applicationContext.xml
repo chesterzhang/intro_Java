@@ -46,9 +46,36 @@
 
     <mvc:interceptors>
         <mvc:interceptor>
-            <mvc:mapping path="/**"/>
+            <mvc:mapping path="/restful/**"/>
+            <mvc:exclude-mapping path="/**.ico"/>
+            <mvc:exclude-mapping path="/**.jpg"/>
+            <mvc:exclude-mapping path="/**.gif"/>
+            <mvc:exclude-mapping path="/**.js"/>
+            <mvc:exclude-mapping path="/**.css"/>
+            <mvc:exclude-mapping path="/resources/**"/>
             <bean class="indi.chester.restful.interceptor.MyInterceptor"/>
         </mvc:interceptor>
     </mvc:interceptors>
+
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/restful/**"/>
+            <mvc:exclude-mapping path="/resources/**"/>
+            <bean class="indi.chester.restful.interceptor.AccessHistoryInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
+<!--    <mvc:interceptors>-->
+<!--        <mvc:interceptor>-->
+<!--            <mvc:mapping path="/restful/**"/>-->
+<!--            <mvc:exclude-mapping path="/**.ico"/>-->
+<!--            <mvc:exclude-mapping path="/**.jpg"/>-->
+<!--            <mvc:exclude-mapping path="/**.gif"/>-->
+<!--            <mvc:exclude-mapping path="/**.js"/>-->
+<!--            <mvc:exclude-mapping path="/**.css"/>-->
+<!--            <mvc:exclude-mapping path="/resources/**"/>-->
+<!--            <bean class="indi.chester.restful.interceptor.MyInterceptor2"/>-->
+<!--        </mvc:interceptor>-->
+<!--    </mvc:interceptors>-->
 
 </beans>
