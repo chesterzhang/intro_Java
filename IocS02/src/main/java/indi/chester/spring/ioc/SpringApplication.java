@@ -6,6 +6,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class SpringApplication {
     public static void main(String[] args) {
+        // 如果有多个配置文件,后面的会覆盖掉前面的
         String[] configLocations = new String[]{"classpath:applicationContext.xml","classpath:applicationContext2.xml"};
         //创建 Spring IoC 容器, 并配置文件在容器中实例化对象
         ApplicationContext context = new ClassPathXmlApplicationContext(configLocations);
