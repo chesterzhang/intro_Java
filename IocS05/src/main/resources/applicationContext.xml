@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 默认 singleton, IoC容器初始化就创建 -->
+<!--    <bean id="userDao" class="indi.chester.spring.ioc.dao.UserDao" scope="singleton"/>-->
+
+    <!-- 若使用 prototype, 则在获取bean时才会创建 -->
+    <bean id="userDao" class="indi.chester.spring.ioc.dao.UserDao"  scope="prototype"/>
+
+    <bean id="userService" class="indi.chester.spring.ioc.service.UserService" scope="prototype">
+        <property name="userDao"    ref="userDao" />
+    </bean>
+
+    <!-- init-method 方法 会在 设置完属性以后再被调用, destroy-method 方法会在 Ioc 容器销毁之前调用 -->
+    <bean id="order1" class="indi.chester.spring.ioc.entity.Order" init-method="calTotal" destroy-method="destroy">
+        <property name="price" value="19"/>
+        <property name="quantity" value="1000"/>
+    </bean>
+
+</beans>
