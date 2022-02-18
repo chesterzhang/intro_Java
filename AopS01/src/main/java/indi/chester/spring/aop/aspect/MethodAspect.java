@@ -22,14 +22,19 @@ public class MethodAspect {
         }
     }
 
+    // 后置通知方法,在目标方法运行后,再执行切面类的切面方法
     public void doAfter(JoinPoint joinPoint){
         System.out.println("触发后置通知");
     }
 
+    // 后置返回通知方法, 在目标方法返回数据后,再执行切面类的切面方法
+    // ret  接受到的目标方法返回值
     public void doAfterReturning(JoinPoint joinPoint, Object ret){
         System.out.println("返回后置通知 ："+ret);
     }
 
+    // 异常通知方法, 在目标方法抛出异常后, 再执行切面类的切面方法
+    // th 接受到的异常
     public void doAfterThrowing(JoinPoint joinPoint, Throwable th){
         System.out.println("异常通知 ："+ th);
     }

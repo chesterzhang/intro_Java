@@ -11,13 +11,13 @@
         http://www.springframework.org/schema/aop/spring-aop.xsd">
 
     <bean id="userDao" class="indi.chester.spring.aop.dao.UserDao"/>
-    <bean id="employeeDao" class="indi.chester.spring.aop.dao.EmployeeDao"/>
+<!--    <bean id="employeeDao" class="indi.chester.spring.aop.dao.EmployeeDao"/>-->
     <bean id="userService" class="indi.chester.spring.aop.service.UserService">
         <property name="userDao" ref="userDao"/>
     </bean>
-    <bean id="employeeService" class="indi.chester.spring.aop.service.EmployeeService">
-        <property name="employeeDao" ref="employeeDao"/>
-    </bean>
+<!--    <bean id="employeeService" class="indi.chester.spring.aop.service.EmployeeService">-->
+<!--        <property name="employeeDao" ref="employeeDao"/>-->
+<!--    </bean>-->
 
     <!-- 切面类 -->
     <bean id="methodAspect" class="indi.chester.spring.aop.aspect.MethodAspect"/>
@@ -35,16 +35,16 @@
 
         <!-- 定义切面类 -->
         <aop:aspect ref="methodAspect">
-            <!-- before 通知, 在目标方法运行前, 先去执行 切面类 的 切面方法-->
+            <!-- before 前置通知, 在目标方法运行前, 先去执行 切面类 的 切面方法-->
             <aop:before method="printExecutionTime" pointcut-ref="pointcut"/>
 
-            <!-- after 通知,在目标方法运行后,再执行切面类的切面方法,,after和after-returning 的运行顺序是根据配置文件的先后顺序-->
+            <!-- after 后置通知,在目标方法运行后,再执行切面类的切面方法,after和after-returning 的运行顺序是根据配置文件的先后顺序-->
             <aop:after method="doAfter" pointcut-ref="pointcut"/>
 
-            <!-- after-returning通知,在目标方法返回值以后,再执行切面类的切面方法,after和after-returning 的运行顺序是根据配置文件的先后顺序-->
+            <!-- after-returning 后置返回通知,在目标方法返回数据以后,再执行切面类的切面方法,after和after-returning 的运行顺序是根据配置文件的先后顺序-->
             <aop:after-returning method="doAfterReturning"  returning="ret" pointcut-ref="pointcut"/>
 
-            <!-- after-throwing, 在目标方法抛出异常后, 再执行切面类的切面方法,after和after-throwing 的运行顺序是根据配置文件的先后顺序-->
+            <!-- after-throwing 异常通知, 在目标方法抛出异常后, 再执行切面类的切面方法,after和after-throwing 的运行顺序是根据配置文件的先后顺序-->
             <aop:after-throwing method="doAfterThrowing" throwing="th" pointcut-ref="pointcut"/>
         </aop:aspect>
     </aop:config>
