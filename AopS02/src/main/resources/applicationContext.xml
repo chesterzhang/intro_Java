@@ -11,12 +11,9 @@
         http://www.springframework.org/schema/aop/spring-aop.xsd">
 
     <bean id="userDao" class="indi.chester.spring.aop.dao.UserDao"/>
-    <bean id="employeeDao" class="indi.chester.spring.aop.dao.EmployeeDao"/>
+
     <bean id="userService" class="indi.chester.spring.aop.service.UserService">
         <property name="userDao" ref="userDao"/>
-    </bean>
-    <bean id="employeeService" class="indi.chester.spring.aop.service.EmployeeService">
-        <property name="employeeDao" ref="employeeDao"/>
     </bean>
 
     <!-- 切面类 -->
@@ -24,7 +21,7 @@
     <aop:config>
         <aop:pointcut id="pointcut" expression="execution(public * indi.chester..*.*(..))"/>
         <aop:aspect ref="methodChecker">
-            <!-- 环绕通知 -->
+            <!-- 环绕通知,使用 methodChecker.check 方法进行环绕通知, 切点为 pointcut -->
             <aop:around method="check" pointcut-ref="pointcut"/>
         </aop:aspect>
     </aop:config>

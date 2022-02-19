@@ -16,9 +16,10 @@ public class MethodChecker {
             if (duration>=1000){
                 String className = pjp.getTarget().getClass().getName();//获取目标类的名称
                 String methodName = pjp.getSignature().getName();//获取目标方法的名称
+                Object[] args = pjp.getArgs();//获取目标方法参数
                 SimpleDateFormat sdt= new SimpleDateFormat("yyyy-MM-dd HH:mm:ss SSSS");
                 String now = sdt.format(new Date());
-                System.out.println("========"+now + " : "+ className+" : "+methodName+ " ( "+ duration +" ms)"+"========");
+                System.out.println("========"+now + " : "+ className+" : "+methodName+ " 参数个数 : " + args.length +" ( "+ duration +" ms)"+"========");
             }
             return ret;
         } catch (Throwable throwable) {
