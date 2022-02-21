@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <h1> Parameter sending ! </h1>
+
+    <h2> Using get method ! </h2>
+    <form action="/recv_parm/g" method="get">
+        <input name="username"> <br>
+        <input name="password"> <br>
+        <input type="submit" value="提交" >
+    </form>
+
+    <h2> Using post method auto unpack ! </h2>
+    <form action="/recv_parm/p1" method="post">
+        <input name="username"> <br>
+        <input name="password"> <br>
+        <input type="submit" value="提交" >
+    </form>
+
+    <h2> Using post method and object auto unpack ! </h2>
+    <form action="/recv_parm/p2" method="post">
+        <input name="username"> <br>
+        <input name="password"> <br>
+        <input type="submit" value="提交" >
+    </form>
+
+</body>
+</html>
