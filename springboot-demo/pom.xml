@@ -50,6 +50,12 @@
             <artifactId>lombok</artifactId>
         </dependency>
 
+        <!-- springboot 官方推荐的模板-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+
     </dependencies>
 
     <build>
