@@ -17,12 +17,12 @@
   <tr>
     <td class="tg-nrix" rowspan="2">Hello, Java</td>
     <td class="tg-nrix">JDK + InteliJ IDEA 环境搭建</td>
-    <td class="tg-nrix"><a href="https://chesterzhang666.gitbook.io/intro-java/hello-java/jdk-+-idea-huan-jing-da-jian">JDK + IntelliJ IDEA 环境搭建</a></td>
+    <td class="tg-nrix"><a href="https://chesterzhang666.gitbook.io/java-quick-start-tutorial/hello-java/jdk-+-intellij-idea-huan-jing-da-jian" target="_blank" rel="noopener noreferrer">JDK + IntelliJ IDEA 环境搭建</a></td>
     <td class="tg-nrix">[无]</td>
   </tr>
   <tr>
     <td class="tg-nrix">InteliJ IDEA 编写第一个程序</td>
-    <td class="tg-nrix"><a href="https://chesterzhang666.gitbook.io/intro-java/hello-java/hello-intellij-idea">InteliJ IDEA 编写 第一个程序</a></td>
+    <td class="tg-nrix"><a href="https://chesterzhang666.gitbook.io/java-quick-start-tutorial/hello-java/intellij-idea-bian-xie-di-yi-ge-cheng-xu" target="_blank" rel="noopener noreferrer">InteliJ IDEA 编写 第一个程序</a></td>
     <td class="tg-nrix"><a href="https://github.com/chesterzhang/intro_Java/tree/zhc_dev/HelloProject">已完成</a></td>
   </tr>
   <tr>
@@ -224,8 +224,8 @@
     <td class="tg-nrix"><a href="https://github.com/chesterzhang/intro_Java/tree/zhc_dev/Maven0">已完成</a></td>
   </tr>
   <tr>
-    <td class="tg-nrix">Maven&nbsp;&nbsp;创建 Java web 项目</td>
-    <td class="tg-nrix"><a href="https://chesterzhang666.gitbook.io/intro-java/maven/maven-chuang-jian-java-web-xiang-mu">Maven&nbsp;&nbsp;创建 Java web 项目</a></td>
+    <td class="tg-nrix">Maven  创建 Java web 项目</td>
+    <td class="tg-nrix"><a href="https://chesterzhang666.gitbook.io/intro-java/maven/maven-chuang-jian-java-web-xiang-mu">Maven  创建 Java web 项目</a></td>
     <td class="tg-nrix"><a href="https://github.com/chesterzhang/intro_Java/tree/zhc_dev/Maven1">已完成</a></td>
   </tr>
   <tr>
@@ -282,12 +282,12 @@
   </tr>
   <tr>
     <td class="tg-nrix">对象依赖注入</td>
-    <td class="tg-nrix"><a href="https://chesterzhang666.gitbook.io/intro-java/spring-ioc/dui-xiang-yi-lai-zhu-ru" target="_blank" rel="noopener noreferrer">对象依赖注入(已完成)</a></td>
+    <td class="tg-nrix"><a href="https://chesterzhang666.gitbook.io/intro-java/spring-ioc/dui-xiang-yi-lai-zhu-ru">对象依赖注入(已完成)</a></td>
     <td class="tg-nrix"><a href="https://github.com/chesterzhang/intro_Java/tree/zhc_dev/IocS01">已完成</a></td>
   </tr>
   <tr>
     <td class="tg-nrix">注入集合对象</td>
-    <td class="tg-nrix"><a href="https://chesterzhang666.gitbook.io/intro-java/spring-ioc/zhu-ru-ji-he-dui-xiang" target="_blank" rel="noopener noreferrer">注入集合对象(已完成)</a></td>
+    <td class="tg-nrix"><a href="https://chesterzhang666.gitbook.io/intro-java/spring-ioc/zhu-ru-ji-he-dui-xiang">注入集合对象(已完成)</a></td>
     <td class="tg-nrix"><a href="https://github.com/chesterzhang/intro_Java/tree/zhc_dev/IocS01">已完成</a></td>
   </tr>
   <tr>
@@ -323,7 +323,7 @@
   </tr>
   <tr>
     <td class="tg-nrix">前置，后置，返回后，异常通知</td>
-    <td class="tg-nrix"><a href="https://chesterzhang666.gitbook.io/intro-java/spring-aop-qie-mian-bian-cheng/qian-zhi-hou-zhi-fan-hui-hou-yi-chang-tong-zhi" target="_blank" rel="noopener noreferrer">前置，后置，返回后，异常通知</a></td>
+    <td class="tg-nrix"><a href="https://chesterzhang666.gitbook.io/intro-java/spring-aop-qie-mian-bian-cheng/qian-zhi-hou-zhi-fan-hui-hou-yi-chang-tong-zhi">前置，后置，返回后，异常通知</a></td>
     <td class="tg-nrix"><a href="https://github.com/chesterzhang/intro_Java/tree/zhc_dev/AopS01">已完成</a></td>
   </tr>
   <tr>
@@ -340,22 +340,22 @@
   <tr>
     <td class="tg-nrix" rowspan="4">面试八股文</td>
     <td class="tg-nrix">Java 基础</td>
-    <td class="tg-nrix"><a href="https://chesterzhang666.gitbook.io/java-quick-start-tutorial/mian-shi-ba-gu-wen/java-ji-chu" target="_blank" rel="noopener noreferrer">更新中</a></td>
+    <td class="tg-nrix"><a href="https://chesterzhang666.gitbook.io/java-quick-start-tutorial/mian-shi-ba-gu-wen/java-ji-chu">更新中</a></td>
     <td class="tg-nrix">无</td>
   </tr>
   <tr>
     <td class="tg-nrix">Java 并发</td>
-    <td class="tg-nrix"><a href="https://chesterzhang666.gitbook.io/java-quick-start-tutorial/mian-shi-ba-gu-wen/java-bing-fa" target="_blank" rel="noopener noreferrer">更新中</a></td>
+    <td class="tg-nrix"><a href="https://chesterzhang666.gitbook.io/java-quick-start-tutorial/mian-shi-ba-gu-wen/java-bing-fa">更新中</a></td>
     <td class="tg-nrix">无</td>
   </tr>
   <tr>
     <td class="tg-nrix">MyBatis</td>
-    <td class="tg-nrix"><a href="https://chesterzhang666.gitbook.io/java-quick-start-tutorial/mian-shi-ba-gu-wen/mybatis" target="_blank" rel="noopener noreferrer">更新中</a></td>
+    <td class="tg-nrix"><a href="https://chesterzhang666.gitbook.io/java-quick-start-tutorial/mian-shi-ba-gu-wen/mybatis">更新中</a></td>
     <td class="tg-nrix">无</td>
   </tr>
   <tr>
     <td class="tg-nrix">Spring</td>
-    <td class="tg-nrix"><a href="https://chesterzhang666.gitbook.io/java-quick-start-tutorial/mian-shi-ba-gu-wen/spring" target="_blank" rel="noopener noreferrer">更新中</a></td>
+    <td class="tg-nrix"><a href="https://chesterzhang666.gitbook.io/java-quick-start-tutorial/mian-shi-ba-gu-wen/spring">更新中</a></td>
     <td class="tg-nrix">无</td>
   </tr>
 </tbody>
