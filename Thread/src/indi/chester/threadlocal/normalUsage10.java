@@ -18,6 +18,7 @@ class Service1 {
         User user = new User("张三");
         //使用set() 方法而不是 intialValue() 方法是因为我们并不知道 ThreadLocal 里面的对象
         //我们需要等待其他的类告诉他应该怎样被初始化
+        System.out.println("Service1拿到用户名：" + user.userName);
         UserContextHolder.holder.set(user);// 将 user 对象装进 ThreadLocal 中
         new Service2().process();
     }
